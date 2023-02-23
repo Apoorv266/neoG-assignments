@@ -7,7 +7,8 @@ obj.occupation = string
 return obj
 }
 
-// how to solve this question using object destructuring ????????
+// how to solve this question using object destructuring ???????? 
+
 // const changeOccupation = (obj, string)  =>{
 // return {...obj, occupation : string}
 // }
