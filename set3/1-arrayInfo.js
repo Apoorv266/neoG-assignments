@@ -1,0 +1,5 @@
+const formatArray = array => `The array has ${array.length} items, and the first item is ${array[0]}, and the last item is ${array[array.length - 1]}`
+
+const items = ['apple', 'banana', 'orange'];
+const message = formatArray(items);
+console.log(message);
