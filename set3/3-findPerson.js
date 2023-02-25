@@ -12,7 +12,8 @@ const findPerson = (array, val) => {
     //     }
     // })
     // return obj
+    return null
 }
 
 
-console.log(findPerson([{ name: 'Amay', age: 25 }, { name: 'Akhil', age: 25 }], "Amay"))
+console.log(findPerson([{ name: 'Amay', age: 25 }, { name: 'Akhil', age: 25 }], "Akhil"))
