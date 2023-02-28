@@ -1,5 +1,5 @@
 // Your ES6 code here
-
+const podAndTeamAllocation = (obj) =>( {...obj,teamId : Math.floor(100000 + Math.random() * 900000) })
 
 
 
