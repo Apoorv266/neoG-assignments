@@ -9,6 +9,6 @@
 
   const getVal = (array) =>{
     let newArr = array.filter((item) => item.marks > 50).map(item => item.name.toUpperCase())
-    return newArr
+    return newArra
   }
   console.log(getVal(studentRecords))
