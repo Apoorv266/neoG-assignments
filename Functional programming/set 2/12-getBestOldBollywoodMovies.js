@@ -10,7 +10,7 @@ const bollywoodMovies = [
 
 // Your code here
 const getBestOldBollywoodMovies = array => {
-    let newArr = array.filter(({ year, rating }) => year < 1990 && rating > 8.0).map(({ title }) => title)
+    let newArr = array.filter(({ year, rating }) => year < 1990 && rating > 8.0).map(({ title}) => title)
     return newArr
 }
 
