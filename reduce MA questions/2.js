@@ -2,14 +2,8 @@
 const strings = ['Apple', 'Aardvark', 'Banana', 'Cat'];
 // Output: 13
 
-const lenSumFunc = (acc, item) => {
-    if (item.charAt(0) === "A") {
-        return acc + item.length
-    }
-    else {
-        return acc
-    }
-}
+const lenSumFunc = (acc, item) =>item.charAt(0) === "A" ? acc + item.length :acc
+    
 
 let result = strings.reduce(lenSumFunc, 0)
 console.log(result)
