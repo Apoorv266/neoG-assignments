@@ -13,7 +13,7 @@ const getMaleCustomers = (acc, arr) => {
 }
 
 //DOUBT = why reduce execution is not stopping after encountering return
-// what if i want the result in object
+
 
 const maleCustomers = customers.reduce(getMaleCustomers, []);
 console.log(maleCustomers);
