@@ -39,15 +39,15 @@
 
     // ////////////////////////////////////////////////////////////////////////
 
-    // const printInfo = (obj1) => {
-    //     const { name, school: { marks } } = obj1;
+    const printInfo = (obj1) => {
+        const { name, school: { marks } } = obj1;
 
-    //     const marksString = marks.map(mark => {
-    //         return `${mark.subject} ${mark.percent}`;
-    //     }).join(' and ');
+        const marksString = marks.map(mark => {
+            return `${mark.subject} ${mark.percent}`;
+        }).join(' and ');
 
-    //     console.log(`2 == My name is ${name}. I scored ${marksString} from ${obj.school.board[0]} board.`);
-    // }
+        console.log(`2 == My name is ${name}. I scored ${marksString} from ${obj.school.board[0]} board.`);
+    }
 
     // // Example usage
     // const obj1 = {

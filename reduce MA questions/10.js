@@ -25,3 +25,29 @@ const freqFunc = (array) => {
 
 const result = freqFunc(strings)
 console.log(result)
+
+
+
+
+
+const num = [5, 2, 5];
+
+const getFreq = (num) => num.reduce((acc, cur) => {
+    const numPrsent = acc.some(ele => ele.number === cur);
+    console.log("numPrsent", numPrsent)
+
+    if (numPrsent) {
+        return acc.map((obj) => obj.number === cur ? {
+            ...obj,
+            frequency: obj.frequency + 1
+        } : obj)
+    } else {
+        return [...acc, {
+            number: cur,
+            frequency: 1
+        }]
+    }
+},
+    [])
+
+console.log(getFreq(num))
