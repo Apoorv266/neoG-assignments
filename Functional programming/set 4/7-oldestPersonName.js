@@ -8,7 +8,6 @@ const people = [
 ]
 
 // Your code here
-let name = ""
 const maxAgeFunc = (acc, arr) => arr.age > acc.age ? arr : acc
 
 const result = people.reduce(maxAgeFunc)
