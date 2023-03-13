@@ -8,6 +8,6 @@ const products = [
 const maxItemFunc = (acc, arr) => (arr.price * arr.quantity) > (acc.price * acc.quantity) ? arr : acc
   
   
-  const result = products.reduce(maxItemFunc)
+  const result = products.reduce(maxItemFunc, products[0])
   console.log(result); 
   // { name: "Slipper", price: 40, quantity: 3 }
