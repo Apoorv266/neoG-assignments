@@ -3,26 +3,24 @@
 const input = [6, 12, 4, 1, 2]
 // Output: {min:1, max: 14}
 
-// let max = -Infinity
-// let min = Infinity
-// const charFunc = (acc, arr) => {
-//     if (acc.max < arr) {
-//         max = arr
-//     }
-//     if (min > arr) {
-//         min = arr
-//     }
-//     return { min: min, max: max }
-// }
 
-
-const charFunc = (acc, cur) => {
-    return {
-        min: cur < acc.min ? cur : acc.min,
-        max: cur > acc.max ? cur : acc.max
+const charFunc = (acc, arr) => {
+    if (acc.max < arr) {
+        acc.max = arr
     }
+    if (acc.min > arr) {
+        acc.min = arr
+    }
+    return acc
 }
 
+
+// const charFunc = (acc, cur) => {
+//     return {
+//         min: cur < acc.min ? cur : acc.min,
+//         max: cur > acc.max ? cur : acc.max
+//     }
+// }
 
 // return {
 //     min: (acc.min < cur) ? acc.min : cur,
