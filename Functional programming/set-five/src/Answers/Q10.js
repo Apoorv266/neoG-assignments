@@ -1,6 +1,7 @@
 // Create an array of objects representing recipes in a cookbook. Each object has the following properties: id, name, ingredients, and instructions. Write a React component that takes the array of recipes as input and generates an ordered list of recipes, where each list item displays the recipe's name, ingredients, and instructions. Data has been provided below for this questions.
 
 import React from 'react'
+import "./Q10-style.css"
 const recipes = [
     {
         id: 1,
@@ -60,34 +61,78 @@ const recipes = [
 ];
 const Q10 = () => {
     return (
-        <ol>
-            {recipes.map((item) => {
-                return (
-                    <>
-                        <li><h3>Recipe {item.id} :</h3></li>
+        <>
+            <ol>
+                {recipes.map((item) => {
+                    return (
+                        <>
+                            <li><h3>Recipe {item.id} :</h3></li>
 
-                        <ul>
-                            <li><b>Recipe Name : </b>{item.name}</li>
-                        <li>
-                            <b>Ingredients</b>
-                            <ol>
-                                {item.ingredients.map((item) => <li>{item}</li>)}
-                            </ol>
-                        </li>
-
-                        <li>
-                            <b>instructions</b>
                             <ul>
-                                {item.instructions.map((item) => <li>{item}</li>)}
+                                <li><b>Recipe Name : </b>{item.name}</li>
+                                <li>
+                                    <b>Ingredients</b>
+                                    <ol>
+                                        {item.ingredients.map((item) => <li>{item}</li>)}
+                                    </ol>
+                                </li>
+
+                                <li>
+                                    <b>instructions</b>
+                                    <ul>
+                                        {item.instructions.map((item) => <li>{item}</li>)}
+                                    </ul>
+                                </li>
                             </ul>
-                        </li>
-                        </ul>
 
-                    </>
-                )
+                        </>
+                    )
 
-            })}
-        </ol>
+                })}
+            </ol>
+
+
+
+            <div className="App">
+                <table>
+                    <tr>
+                        <th>Number</th>
+                        <th>Recipe Name</th>
+                        <th>Ingredients</th>
+                        <th>Instructions</th>
+                    </tr>
+
+
+                    {recipes.map((item) => {
+                        return (
+                            <tr>
+                                <td className='numId'>{item.id}</td>
+                                <td>{item.name}</td>
+                                
+                                <td><ul>
+                                    {item.ingredients.map((item) => {
+                                        return <li>{item}</li>
+                                    })}
+                                </ul></td>
+
+                                <td>
+                                    <ul>
+                                    {item.instructions.map((item) => (<li>{item}</li>))}
+                                    </ul>
+                                </td>
+                            </tr>
+                        )
+                    })}
+                    {/* 
+        <tr>
+          <td>Anom</td>
+          <td>19</td>
+          <td>Male</td>
+        </tr> */}
+
+                </table>
+            </div>
+        </>
     )
 }
 
