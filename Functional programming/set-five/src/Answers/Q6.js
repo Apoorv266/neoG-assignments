@@ -11,7 +11,7 @@ const Q6 = () => {
         { id: 5, make: 'Tesla', model: 'Model 3', price: 50000 },
       ];
 
-      const displayList = item => <li>{item.make} - {item.model} - (Rs.{item.price})</li>
+      const displayList = item => <li key={item.id}>{item.make} - {item.model} - (Rs.{item.price})</li>
 
   return (
     <ul>
