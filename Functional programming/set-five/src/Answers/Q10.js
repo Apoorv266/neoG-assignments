@@ -107,7 +107,7 @@ const Q10 = () => {
                         return (
                             <tr key={item.id}>
                                 <td className='numId'>{item.id}</td>
-                                <td>{item.name}</td>
+                                <td className='recipeName'>{item.name}</td>
 
                                 <td><ul>
                                     {item.ingredients.map((item) => {
