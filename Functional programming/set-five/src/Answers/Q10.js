@@ -65,7 +65,7 @@ const Q10 = () => {
             <ol>
                 {recipes.map((item) => {
                     return (
-                        <>
+                        <div key={item.id}>
                             <li><h3>Recipe {item.id} :</h3></li>
 
                             <ul>
@@ -85,7 +85,7 @@ const Q10 = () => {
                                 </li>
                             </ul>
 
-                        </>
+                        </div>
                     )
 
                 })}
@@ -105,10 +105,10 @@ const Q10 = () => {
 
                     {recipes.map((item) => {
                         return (
-                            <tr>
+                            <tr key={item.id}>
                                 <td className='numId'>{item.id}</td>
                                 <td>{item.name}</td>
-                                
+
                                 <td><ul>
                                     {item.ingredients.map((item) => {
                                         return <li>{item}</li>
@@ -117,7 +117,7 @@ const Q10 = () => {
 
                                 <td>
                                     <ul>
-                                    {item.instructions.map((item) => (<li>{item}</li>))}
+                                        {item.instructions.map((item) => (<li>{item}</li>))}
                                     </ul>
                                 </td>
                             </tr>
