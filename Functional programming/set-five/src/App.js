@@ -6,7 +6,7 @@
 // import Q3 from './Answers/Q3';
 // import Q4 from './Answers/Q4';
 // import Q5 from './Answers/Q5';
-// import Q6 from './Answers/Q6';
+import Q6 from './Answers/Q6';
 // import Q7 from './Answers/Q7';
 // import Q8 from './Answers/Q8';
 // import Q9 from './Answers/Q9';

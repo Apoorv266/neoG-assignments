@@ -13,7 +13,7 @@ const Q5 = () => {
   return (
     <ul>
         {recipes.map((item) =>(
-            <li key={item.id}><b>Recipe's name  : </b>{item.name} - <b>Creator : </b>{item.creator}</li>
+            <li key={item.id}><b>Recipe's name : </b>{item.name} - <b>Creator : </b>{item.creator}</li>
         ))}
     </ul>
   )
