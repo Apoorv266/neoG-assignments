@@ -17,3 +17,5 @@ console.log(product)
 // changeSize(product, 'L')
 changeSize2(product, 'L')
 console.log(product) 
+
+// we cannot spread object/array initiated with const
