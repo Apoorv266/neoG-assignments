@@ -1,11 +1,13 @@
 import React from "react";
-import EmployeeData8 from "./Answers/EmployeeData8";
-import SalaryExpense9 from "./Answers/SalaryExpense9";
-import StudentMarks7 from "./Answers/StudentMarks7";
+// import EmployeeData8 from "./Answers/EmployeeData8";
+// import SalaryExpense9 from "./Answers/SalaryExpense9";
+// import StudentMarks7 from "./Answers/StudentMarks7";
 // import Buttonstyle from './Answers/2-buttonStyle';
 // import DispImg from "./Answers/DispImg4";
 // import ItemList5 from "./Answers/ItemList5";
 // import ListItems3 from './Answers/ListItems3';
+import BackgroundClr10 from "./Answers/BackgroundClr10";
+import President11 from "./Answers/President11";
 
 const App = () => {
   // 1st
@@ -55,7 +57,9 @@ const App = () => {
       {/* <ItemList5 products={products}/> */}
       {/* <StudentMarks7 student={student} /> */}
       {/* <EmployeeData8/> */}
-      <SalaryExpense9/>
+      {/* <SalaryExpense9/> */}
+      {/* <BackgroundClr10/> */}
+      <President11/>
     </>
   );
 };
