@@ -1,7 +1,8 @@
 import React from "react";
+import StudentMarks7 from "./Answers/StudentMarks7";
 // import Buttonstyle from './Answers/2-buttonStyle';
-import DispImg from "./Answers/DispImg4";
-import ItemList5 from "./Answers/ItemList5";
+// import DispImg from "./Answers/DispImg4";
+// import ItemList5 from "./Answers/ItemList5";
 // import ListItems3 from './Answers/ListItems3';
 
 const App = () => {
@@ -26,13 +27,22 @@ const App = () => {
   // const caption = "Spring Flowers";
 
   //5th and 6th
-  const products = [
-    { name: "Perk", quantity: 10, sales: 7 },
-    { name: "Pepsi", quantity: 10, sales: 20 },
-    { name: "Coke", quantity: 18, sales: 50 },
-    { name: "Maggi", quantity: 41, sales: 22 },
-    { name: "5Star", quantity: 7, sales: 9 },
-  ];
+  // const products = [
+  //   { name: "Perk", quantity: 10, sales: 7 },
+  //   { name: "Pepsi", quantity: 10, sales: 20 },
+  //   { name: "Coke", quantity: 18, sales: 50 },
+  //   { name: "Maggi", quantity: 41, sales: 22 },
+  //   { name: "5Star", quantity: 7, sales: 9 },
+  // ];
+
+  //7th
+  const student = {
+    name: "John Doe",
+    english: 90,
+    maths: 80,
+    computers: 70,
+  };
+  
   return (
     <>
       {/* <EmployeeCard name={name} designation={designation} workExp={workExp}/>
@@ -40,7 +50,8 @@ const App = () => {
       {/* <Buttonstyle  backgroundColor={backgroundColor} color={color} borderRadius={borderRadius} padding={padding}/> */}
       {/* <ListItems3 items={articles} header={header}/> */}
       {/* <DispImg imageLink={imageLink} caption={caption} /> */}
-      <ItemList5 products={products}/>
+      {/* <ItemList5 products={products}/> */}
+      <StudentMarks7 student={student} />
     </>
   );
 };
