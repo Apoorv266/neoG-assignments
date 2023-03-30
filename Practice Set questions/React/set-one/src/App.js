@@ -1,4 +1,6 @@
 import React from "react";
+import EmployeeData8 from "./Answers/EmployeeData8";
+import SalaryExpense9 from "./Answers/SalaryExpense9";
 import StudentMarks7 from "./Answers/StudentMarks7";
 // import Buttonstyle from './Answers/2-buttonStyle';
 // import DispImg from "./Answers/DispImg4";
@@ -42,7 +44,7 @@ const App = () => {
     maths: 80,
     computers: 70,
   };
-  
+
   return (
     <>
       {/* <EmployeeCard name={name} designation={designation} workExp={workExp}/>
@@ -51,7 +53,9 @@ const App = () => {
       {/* <ListItems3 items={articles} header={header}/> */}
       {/* <DispImg imageLink={imageLink} caption={caption} /> */}
       {/* <ItemList5 products={products}/> */}
-      <StudentMarks7 student={student} />
+      {/* <StudentMarks7 student={student} /> */}
+      {/* <EmployeeData8/> */}
+      <SalaryExpense9/>
     </>
   );
 };
