@@ -70,7 +70,7 @@ const President11 = () => {
                     return (
                         <li style={{ border: styleFunc(item.designation) }}>
                             name: {item.name}, level: {item.level}, dept: {item.dept},
-                            designation: {item.designation}, salary: {item.salary}
+                            designation {"=>"} {item.designation}, salary: {item.salary}
                         </li>
                     );
                 })}
