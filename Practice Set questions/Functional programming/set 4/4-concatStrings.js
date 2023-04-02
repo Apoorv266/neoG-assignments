@@ -3,6 +3,6 @@
 // Your code here
 let strings = ['this', 'is', 'fun']
 
-const concatFunc = (acc, arr) => `${acc}${arr}`
+const concatFunc = (acc, arr) => acc+arr
 const result = strings.reduce(concatFunc, "")
 console.log(result); // Output: 'thisisfun'
