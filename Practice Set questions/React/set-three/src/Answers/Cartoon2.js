@@ -5,12 +5,7 @@ const Cartoon2 = ({ cartoons }) => {
         <div>
             <ol>
                 {cartoons?.map((item) => {
-                    if (item.magnitude > 5) {
-                        return (
-                            <h1>{item.name}</h1>
-                        )
-                    }
-
+                    return item.magnitude > 5 ? <h1>{item.name}</h1> : null
                 })}
             </ol>
         </div>

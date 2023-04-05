@@ -5,9 +5,7 @@ const Flowers6 = ({bouquet}) => {
     <div>
         <ol>
             {bouquet?.map((item)=>{
-                if (item.flowers.includes("rose")) {
-                    return <li>Price of bouquet with roses : Rs.{item.price}</li>
-                }
+              return item.flowers.includes("rose") ?  <li>Price of bouquet with roses : Rs.{item.price}</li> : null
             })}
         </ol>
     </div>

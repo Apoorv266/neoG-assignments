@@ -5,11 +5,7 @@ const Cartoon4 = ({cartoons}) => {
         <div>
         <ol>
             {cartoons?.map((item) => {
-                if (item.superpower === 'Intelligence') {
-                    return (
-                        <h1>{item.name} - {item.superpower} - {item.magnitude}</h1>
-                    )
-                }
+                return item.superpower === 'Intelligence' ?<h1>{item.name} - {item.superpower} - {item.magnitude}</h1> : null
     
             })}
         </ol>

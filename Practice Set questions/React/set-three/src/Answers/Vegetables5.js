@@ -5,11 +5,7 @@ const Vegetables5 = ({vegetables}) => {
     <div>
     <ol>
         {vegetables?.map((item) => {
-            if (item.pickDate === "2023-03-30") {
-                return (
-                    <h1>{item.name} - {item.pickDate}</h1>
-                )
-            }
+            return item.pickDate === "2023-03-30" ?<h1>{item.name} - {item.pickDate}</h1> : null
         })}
     </ol>
 </div>
