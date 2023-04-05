@@ -10,6 +10,8 @@ const Phones5 = ({ products }) => {
                             {item.name} --- {item.description} --- Rs.{item.price}
                         </li>
                     )
+                }else{
+                    return null
                 }
             })}
         </ol>

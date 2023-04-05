@@ -17,3 +17,21 @@ const ColorPicker9 = ({redCol, blueCol, greenCol}) => {
 }
 
 export default ColorPicker9
+
+
+
+export const ColorPicker = ({ red, blue, green }) => {
+    const [content, setContent] = useState("");
+    const handleOnClick = (color) => {
+      setContent(color);
+    };
+    return (
+      <>
+        <h1>Color Picker</h1>
+        <button onClick={() => handleOnClick(red)}>Red</button>{" "}
+        <button onClick={() => handleOnClick(blue)}>Blue</button>{" "}
+        <button onClick={() => handleOnClick(green)}>Green</button>{" "}
+        <p>{content}</p>
+      </>
+    );
+  };

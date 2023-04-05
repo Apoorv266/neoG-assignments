@@ -9,6 +9,8 @@ const Flowers7 = ({ bouquet }) => {
                         return item.flowers.map((item) => {
                             return <li>{item}</li>
                         })
+                    }else{
+                        return null
                     }
                 })}
             </ol>

@@ -7,6 +7,7 @@ import DispImg1 from './Answers/DispImg1';
 import Donation8 from './Answers/Donation8';
 import Flowers6 from './Answers/Flowers6';
 import Flowers7 from './Answers/Flowers7';
+import Marks10 from './Answers/Marks10';
 import Vegetables5 from './Answers/Vegetables5';
 import './App.css';
 
@@ -121,30 +122,54 @@ function App() {
   // ]
 
   //9th
-  const cars = [
+  // const cars = [
+  //   {
+  //     id: 1,
+  //     name: 'supra',
+  //     price: 500000,
+  //     category: 'sports',
+  //   },
+  //   {
+  //     id: 2,
+  //     name: 'A5',
+  //     price: 700000,
+  //     category: 'luxury',
+  //   },
+  //   {
+  //     id: 3,
+  //     name: 'huyara',
+  //     price: 1500000,
+  //     category: 'sports',
+  //   },
+  //   {
+  //     id: 4,
+  //     name: 'agera R',
+  //     price: 3500000,
+  //     category: 'sports',
+  //   },
+  // ]
+
+  //10th
+  const studentData = [
     {
       id: 1,
-      name: 'supra',
-      price: 500000,
-      category: 'sports',
+      name: 'Nitin',
+      marks: 78,
     },
     {
       id: 2,
-      name: 'A5',
-      price: 700000,
-      category: 'luxury',
+      name: 'Mehak',
+      marks: 95,
     },
     {
       id: 3,
-      name: 'huyara',
-      price: 1500000,
-      category: 'sports',
+      name: 'Mehul',
+      marks: 65,
     },
     {
       id: 4,
-      name: 'agera R',
-      price: 3500000,
-      category: 'sports',
+      name: 'Nina',
+      marks: 56,
     },
   ]
 
@@ -158,7 +183,8 @@ function App() {
    {/* <Flowers6 bouquet={bouquet}/> */}
    {/* <Flowers7 bouquet={bouquet}/>  */}
    {/* <Donation8 DonationData={DonationData}/> */}
-   <CategoryCars9 cars={cars}/>
+   {/* <CategoryCars9 cars={cars}/> */}
+   <Marks10 studentData={studentData}/>
     </div>
   );
 }
