@@ -1,18 +1,28 @@
+import UserProfile3 from './Answers/UserProfile3';
 import './App.css';
-import Greetings2 from './Answers/Greetings2';
-// import Name1 from './Answers/Name1';
+// import Greetings1 from './Answers/Greetings1';
+// import Products2 from './Answers/Products2';
 
 function App() {
-  //1st
+  //1nd 
+  // const name = "Apoorv"
+
+  //2st
   // const product = "Washing machine"
   // const price = 25000
 
-  //2nd 
-  const name = "Apoorv"
+  //3rd
+  const userData = {
+    name: 'John',
+    age: 25,
+    email: 'john@example.com',
+  }
+
   return (
     <div className="App">
-    {/* <Name1 product={product} price={price}/> */}
-    <Greetings2 name={name}/>
+    {/* <Products2 product={product} price={price}/> */}
+    {/* <Greetings1 name={name}/> */}
+    <UserProfile3 userData={userData}/>
     </div>
   );
 }

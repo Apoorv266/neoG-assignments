@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Name1 = ({product, price}) => {
+const Products2 = ({product, price}) => {
   return (
     <>
     <p style={{color: "blue"}}><strong>{product}</strong></p>
@@ -9,4 +9,4 @@ const Name1 = ({product, price}) => {
   )
 }
 
-export default Name1
+export default Products2
