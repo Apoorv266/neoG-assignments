@@ -1,6 +1,9 @@
 
 import './App.css';
 import Heroes1 from './Answers/Heroes1';
+import FontSize2 from './Answers/FontSize2';
+import Fruits3 from './Answers/Fruits3';
+import Todos4 from './Answers/Todos4';
 
 function App() {
   //1st 
@@ -55,9 +58,20 @@ function App() {
       },
     ],
   };
+
+  //4th 
+  const todoItems = [
+    {id: 1, task: "Writing 1-page poem", isDone: true},
+    {id: 2, task: "Gym", isDone: false},
+    {id: 3, task: "Shopping", isDone: false},
+    {id: 4, task: "Standup call", isDone: true},
+  ]
   return (
     <div className="App">
-      <Heroes1 characters={characters}/>
+      {/* <Heroes1 characters={characters}/> */}
+      {/* <FontSize2/> */}
+      {/* <Fruits3/> */}
+      <Todos4 todoItems={todoItems}/>
     </div>
   );
 }
