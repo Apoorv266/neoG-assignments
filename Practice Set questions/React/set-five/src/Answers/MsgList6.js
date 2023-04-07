@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 const MsgList6 = () => {
     const [data, setdata] = useState([])
+    const [loading, setloading] = useState(false)
     
     const fakeFetch = (url) => {
         return new Promise((resolve, reject) => {
@@ -68,9 +69,16 @@ const MsgList6 = () => {
       }
       
       const fetchFunc = async() =>{
-        const response = await fakeFetch("https://example.com/api/userchat")
-        if (response.status === 200) {
-            setdata(response.data)
+          try {
+            setloading(true)
+            const response = await fakeFetch("https://example.com/api/userchat")
+            if (response.status === 200) {
+                setdata(response.data)
+            }
+        } catch (error) {
+            console.log(error);
+        }finally{
+            setloading(false)
         }
       }
       useEffect(() => {
@@ -80,14 +88,15 @@ const MsgList6 = () => {
       
   return (
     <div>
+        {loading && <h1>Loading Chats...</h1>}
         <ul>
-            {data.map((item) =>{
+            {data.map((item, index) =>{
                 return (
                     <>
-                    <li><h1>{item.name}'s chat</h1></li>
+                    <li key={index}><h1>{item.name}'s chat</h1></li>
                     <ul>
-                        {item.messages.map((value) =>{
-                            return <li><strong>{value.from}: </strong>{value.message}</li>
+                        {item.messages.map((value, index) =>{
+                            return <li key={index}><strong>{value.from}: </strong>{value.message}</li>
                         })}
                     </ul>
                     </>
