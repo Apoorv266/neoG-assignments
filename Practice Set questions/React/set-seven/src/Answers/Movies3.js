@@ -31,7 +31,7 @@ const Movies3 = () => {
     const filteredItems =
     selectedYear === null
         ? data
-        : data.filter((item) => item.year == selectedYear);
+        : data.filter((item) => item.year === parseInt(selectedYear));
 
     const fetchFunc = async () => {
         const response = await fakeFetch("https://example.com/api/movies")
@@ -62,7 +62,7 @@ const Movies3 = () => {
                     <option value="2010">2010</option>
                 </select>
             </div>
-            {filteredItems.length > 0 ? filteredItems.map((item, index) => {
+            {filteredItems.map((item, index) => {
                 return (
                     <>
                     <div key={index}>
@@ -73,7 +73,9 @@ const Movies3 = () => {
                         </div>
                     </>
                 )
-            }): <h1>No movie in this year </h1>} 
+            })}
+            
+            {filteredItems.length === 0 && <h1>No movie in this year </h1>} 
         </div>
     )
 }
