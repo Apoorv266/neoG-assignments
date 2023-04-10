@@ -3,6 +3,8 @@
 import Q1 from './Answers/Q1';
 import Todo from './Answers/Todo';
 import Bonus from './Answers/Bonus';
+import Q4 from './Answers/Q4';
+import Article from './Answers/Article';
 
 function App() {
   const todoItems = [
@@ -74,11 +76,16 @@ function App() {
     },
     { id: 9, name: 'mobile', description: 'iPhone 12', price: 90000 },
   ]
+
+  const title = 'React is awesome'
+const content = 'React is a JavaScript library for building user interfaces.'
   return (
     <div className="App">
       {/* <Q1/> */}
       {/* <Todo todoItems={todoItems}/> */}
-      <Bonus products={products}/>
+      {/* <Bonus products={products}/> */}
+      {/* <Q4/> */}
+      <Article title={title} content={content}/>
     </div>
   );
 }
