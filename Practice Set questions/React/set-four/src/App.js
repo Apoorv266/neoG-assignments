@@ -94,9 +94,9 @@ function App() {
       {/* <FontSize2/> */}
       {/* <Fruits3/> */}
       {/* <Todos4 todoItems={todoItems}/> */}
-      {/* <TodoList5 todoItems1={todoItems1}/> */}
+      <TodoList5 todoItems1={todoItems1}/>
       {/* <Books6 books={books}/> */}
-      <Game7/>
+      {/* <Game7/> */}
     </div>
   );
 }
