@@ -1,10 +1,11 @@
 
-// import './App.css';
+import './App.css';
 import Q1 from './Answers/Q1';
 import Todo from './Answers/Todo';
 import Bonus from './Answers/Bonus';
 import Q4 from './Answers/Q4';
 import Article from './Answers/Article';
+import ColorPicker from './Answers/ColorPicker';
 
 function App() {
   const todoItems = [
@@ -85,7 +86,8 @@ const content = 'React is a JavaScript library for building user interfaces.'
       {/* <Todo todoItems={todoItems}/> */}
       {/* <Bonus products={products}/> */}
       {/* <Q4/> */}
-      <Article title={title} content={content}/>
+      {/* <Article title={title} content={content}/> */}
+      <ColorPicker/>
     </div>
   );
 }
