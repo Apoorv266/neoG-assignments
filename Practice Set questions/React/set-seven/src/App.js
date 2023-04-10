@@ -4,6 +4,8 @@ import Company4 from './Answers/Company4';
 import Genre6 from './Answers/Genre6';
 import Movies3 from './Answers/Movies3';
 import Quote5 from './Answers/Quote5';
+import Sort7 from './Answers/Sort7';
+import Sort8 from './Answers/Sort8';
 import Weather1 from './Answers/Weather1';
 import './App.css';
 
@@ -15,7 +17,9 @@ function App() {
     {/* <Movies3/> */}
     {/* <Company4/> */}
     {/* <Quote5/> */}
-    <Genre6/>
+    {/* <Genre6/> */}
+    {/* <Sort7/> */}
+    <Sort8/>
     </div>
   );
 }
