@@ -27,6 +27,11 @@ const Movies3 = () => {
     };
 
     const [data, setdata] = useState([])
+    const [selectedYear, setselectedYear] = useState(null);
+    const filteredItems =
+    selectedYear === null
+        ? data
+        : data.filter((item) => item.year == selectedYear);
 
     const fetchFunc = async () => {
         const response = await fakeFetch("https://example.com/api/movies")
@@ -38,31 +43,37 @@ const Movies3 = () => {
     useEffect(() => {
         fetchFunc()
     }, [])
+
+    const handlechange = (e) => {
+        e.target.value === "All" ? setselectedYear(null) : setselectedYear(e.target.value)
+    };
     return (
         <div>
             <h1>Movies</h1>
-<div>
-    <h3>Filter by year : </h3>
-<select >
-        <option value="All">All</option>
-        <option value="2005">2005</option>
-        <option value="2006">2006</option>
-        <option value="2007">2007</option>
-        <option value="2008">2008</option>
-        <option value="2009">2009</option>
-        <option value="2010">2010</option>
-      </select>
-</div>
-{data.map((item) =>{
-    return (
-        <>
-        <p>Name : {item.title}</p>
-        <p>Year : {item.year}</p>
-        <p>Ratings: {item.rating}</p>
-        <hr/>
-        </>
-    )
-})}
+            <div>
+                <h3>Filter by year : </h3>
+                <select onChange={handlechange}>
+                    <option value="All">All</option>
+                    <option value="2005">2005</option>
+                    <option value="2006">2006</option>
+                    <option value="2007">2007</option>
+                    <option value="2008">2008</option>
+                    <option value="2009">2009</option>
+                    <option value="2010">2010</option>
+                </select>
+            </div>
+            {filteredItems.length > 0 ? filteredItems.map((item, index) => {
+                return (
+                    <>
+                    <div key={index}>
+                        <p>Name : {item.title}</p>
+                        <p>Year : {item.year}</p>
+                        <p>Ratings: {item.rating}</p>
+                        <hr />
+                        </div>
+                    </>
+                )
+            }): <h1>No movie in this year </h1>} 
         </div>
     )
 }
