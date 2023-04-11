@@ -11,27 +11,26 @@ const ColorPicker = () => {
         green: ''
     })
 
-    const handleFunc = (item) => {
-        let newObj = obj
-        for (const key in newObj) {
-            if (item === "red") {
-                newObj[key] = red
-            }else if (item === "blue") {
-                newObj[key] = blue
-            }
-            else if (item === "green") {
-                newObj[key] = green
-            }
-        }
-        // setobj(newObj)
+    const handleFunc = (item, value) => {
+        let newObj = {...obj, [`${item}`] : value}
+        setobj(newObj)
         console.log(newObj)
     }
     return (
         <div>
-            {Object.keys(obj).map((item) => <div><button onClick={() => handleFunc(item)}>{item}</button></div>)}
+            {/* {Object.keys(obj).map((item) => <div><button onClick={() => handleFunc(item, )}>{item}</button></div>)} */}
+            <div>
+            <button onClick={() => handleFunc("red",red )}>Red</button>
             {obj.red && <p>{obj.red}</p>}
-            {<p></p>}
-            {<p></p>}
+            </div>
+            <div>
+            <button onClick={() => handleFunc("blue",blue )}>Blue</button>
+            {obj.blue && <p>{obj.blue}</p>}
+            </div>
+            <div>
+            <button onClick={() => handleFunc("green", green)}>Green</button>
+            {obj.green && <p>{obj.green}</p>}
+            </div>
         </div>
     )
 }
