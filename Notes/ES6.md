@@ -229,6 +229,8 @@ console.log(spreadExample(obj))
 
 ## Rest and Spread Operators
 
+![alt text](./img2.png)
+
 ### Rest 
 
 - With the Rest parameter, we can create functions that can take in a variable number of arguments. These arguments are stored in an array, which can be accessed from within the function.
