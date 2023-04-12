@@ -51,11 +51,11 @@ root.render(
         <Route path="/product" element={<ProductDetail />} />
         <Route path="/wishlist" element={<WishList />} />
         <Route path="/cart" element={<Cart />} />
-      </Routes>
+</Routes>
 ```
  
  >In the above code, we created 5 routes for 5 different components.
- 
+
 ## What is a route?
 
 Different URLs of a website are known as routes. It can either be “/” or slash with a category,
@@ -132,6 +132,8 @@ export default function App() {
 •	If a path segment starts with colon(:) then it becomes a "dynamic segment".
 
 •	Colon specifics that the thing infront of it is a variable and it will change.
+
+![alt text](./output3.png)
 
 
 **Product.js component** 
