@@ -136,6 +136,29 @@ Here `var` does not gives reference error instead gives undefined. This is calle
 Lets understand it with an example:-
 
 ```
+example 2
+function practice(){
+console.log(a);
+let a = 10;
+}
+practice();
+
+output --> 
+Uncaught ReferenceError: Cannot access 'a' before initialization
+    at practice (<anonymous>:2:13)
+    at <anonymous>:5:1
+```
+
+**Explanation:**
+
+The Code resulted in a ReferenceError. This is because variables declared using let keyword are subjected to Temporal Dead Zone.
+
+Let and Const does not support hoisting in JavaScript. Therefore the variable cannot be hoisted and as a result it gives a ReferenceError.
+
+> **Always declare first, then access it**
+>
+```
+example 1
 let a = 100;
 function App() {
 
