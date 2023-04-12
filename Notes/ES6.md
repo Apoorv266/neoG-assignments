@@ -210,3 +210,16 @@ console.log(a); //1
 console.log(b); //2
 console.log(c); //[3,4,5,6,7,8,9,10]
 ```
+
+>Destructuring can also be done in function parameters as well
+
+```JS
+const spreadExample = ({ a, b }) => {
+  console.log(a, b)
+}
+
+const obj = { a: 1, b: 2 }
+console.log(spreadExample(obj))
+```
+
+>In this code we have destructured a and b property from obj object while passing them as parameters.
