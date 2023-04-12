@@ -136,7 +136,7 @@ Here `var` does not gives reference error instead gives undefined. This is calle
 Lets understand it with an example:-
 
 ```
-example 2
+example 1
 function practice(){
 console.log(a);
 let a = 10;
@@ -158,7 +158,7 @@ Let and Const does not support hoisting in JavaScript. Therefore the variable ca
 > **Always declare first, then access it**
 >
 ```
-example 1
+example 2
 let a = 100;
 function App() {
 
