@@ -121,7 +121,7 @@ export default function App() {
 ![alt text](./output1.png)
 
 
-- In the above example, we have created a <nav></nav> within which we have created few Link with “to” property assigned with predefined paths.
+- In the above example, we have created a nav within which we have created few Link with “to” property assigned with predefined paths.
 
 - Let’s take the example of “/category” path, first we created a route with path “/category” with renders Category component. 
 
@@ -140,7 +140,7 @@ export default function App() {
 
 In a category listing page, on click of view details for each product, navigate to a page which shows the details of that particular product only. The URL should be unique for each product.
 
-```JSs
+```JS
 export function ProductCard({
   id,
   name,
@@ -233,6 +233,11 @@ const {productId} = useParams();
 
 ![alt text](./output2.png)
 
+>Summary
+>- Route = for defining routes
+>- Link = navigate between paths
+>- BrowerRouter = to provide router functionality
+
 ## NavLink and active Class
 
 -	A NavLink is a special kind of Link that knows whether or not it is "active" or not.
@@ -316,7 +321,7 @@ In second case, a dynamic route is used which is receiving “cart” as someID 
 <Route path="/:someID" element={<Category />} />
 ```
 
-In both the cases the URL will become as “/cart”, so which component will be rendered?
+***In both the cases the URL will become as “/cart”, so which component will be rendered?***
 
 Answer : The perfect match URL will get the priority over dynamic matched URL hence the perfect match path “/cart” will be used that will render the Cart component.
 
