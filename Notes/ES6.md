@@ -51,6 +51,10 @@ What is the scope of var, let, and const?
 
 3. `const` is also block-scoped but it can't be updated or redeclared.
 
+>### Why use let & const over var?
+let and const provide block scoping, and variables declared using these keywords cannot be redeclared within the same scope. Attempting to redeclare a variable will result in a syntax error.
+With var, redeclaring a variable in the same scope is allowed and will simply override the previous declaration, potentially causing unexpected behavior in your code.
+
 
 ### Lets understand scopes with example 
 
