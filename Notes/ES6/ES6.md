@@ -207,6 +207,37 @@ OUTPUT --> undefined
 
 Since the a variable is declared with var, the output gets changed to undefined. This is because, var supports hoisting whereas let and Const don’t. variables declared with var are hoisted at the top of the scope, and as a result it holds a value undefined.
 
+## Const with Objects
+
+Lets suppose we have an object :
+
+```JS
+const obj = {val1:1, val2:2};
+obj.val2 = 25;
+```
+
+even though the above object is assigned using const we are able to update/This happens because in JavaScript, object is created using reference to a memory location. Here it creates a constant reference the the object obj. The compiler allows us to updated or modify the property of the object.
+
+![alt text](./obj1.png)
+
+
+```js
+EXAMPLE 2
+
+const obj3 = {val1:1, val2:2}
+const obj4 = {val1:1, val2:2}
+obj3 === obj4
+
+OUTPUT --> false
+```
+
+**Explaination**
+
+Both are pointing to two different references of the memory location even though the key-value properties of both the objects obj3 and obj4 are same.
+
+![alt text](./obj2.png)
+
+
 >### Summary:
 - `var` has global scope while `let` has block scope. That means `var` can be accessed outside a block but `let` can’t be.
 - `var` and `let` both are function scoped ⇒ that means if the variable is declared using `var/let` inside a function ⇒ It can’t be accessed outside the function.
