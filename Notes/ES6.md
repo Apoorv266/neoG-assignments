@@ -30,3 +30,36 @@ const sum = ( a,b ) => { return a+b; }
 ```
 
 >Arrow function is an introduction in ES6 that makes the code more readable. 
+
+### Variations of Arrow Function
+
+-If you use { } in arrow function, you need to use return to return a value that you want. 
+
+```
+function add10To(num) {
+	return num + 10;
+}
+```
+
+
+-If there is just one line we don’t need to use {} and return . Arrow function automatically does that.
+
+```
+const add10To = (num) => (num + 10)
+```
+
+-If there is only one parameter, we don’t need to use ().
+
+```
+const add10To = num => num + 10;
+```
+
+### Arrow function for objects
+
+If there is single object that has to be returned then it should be done as :-
+
+```
+const objFuncs = a => ({value: a});
+```
+
+Here, () were used for 1 line as well because, the objects {} might be understood as function blocks, therefore to let the JS know, that these are object’s bracket and not function’s. {} are used.
