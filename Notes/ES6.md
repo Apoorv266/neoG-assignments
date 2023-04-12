@@ -31,36 +31,39 @@ const a = 26; // re-assigning is not possible
 Here `a` is a variable and `const` is a keyword used for variable declaration.
 
 
-    ### Scopes in javascript
+### Scopes in javascript
 
-    - Types of Scopes in JavaScript:
+- Types of Scopes in JavaScript:
 
-    - Block scope: Variables that are declared inside a { } block cannot be accessed from outside the block.
+- Block scope: Variables that are declared inside a { } block cannot be accessed from outside the block.
 
-    - Function scope: Variables defined inside a function are not accessible from outside the function. Each function creates a new scope.
+- Function scope: Variables defined inside a function are not accessible from outside the function. Each function creates a new scope.
 
-    - Global scope: Variables declared Globally (outside of any function) have Global Scope and Global variables can be accessed from anywhere in a program.
+- Global scope: Variables declared Globally (outside of any function) have Global Scope and Global variables can be accessed from anywhere in a program.
 
-    ![alt text](./img3.png)
+![alt text](./img3.png)
 
-    - What is the scope of var, let, and const?
-    1. `var` can be global/functional scoped and it is used for variables that need to be redeclared and updated.
-    2. `let` is block-scoped and can be updated but not redeclared.
-    3. `const` is also block-scoped but it can't be updated or redeclared.
+What is the scope of var, let, and const?
+
+1. `var` can be global/functional scoped and it is used for variables that need to be redeclared and updated.
+
+2. `let` is block-scoped and can be updated but not redeclared.
+
+3. `const` is also block-scoped but it can't be updated or redeclared.
 
 
-    ### Lets understand scopes with example 
+### Lets understand scopes with example 
 
-    ```JS
+```JS
     if(true){
 	var a = 2;
 	let b = 3;
 console.log(b); // Output: 3
 }
 console.log(a); // Output: 2
-    ```
+```
 
-    Ok, so it seems let works only inside those brackets {..} and not outside. These {...} are called blocks, where code is written and let is block scoped. That means variable declared inside a block using let is not accessible outside the block, while using var → it can be accessed.
+Ok, so it seems let works only inside those brackets {..} and not outside. These {...} are called blocks, where code is written and let is block scoped. That means variable declared inside a block using let is not accessible outside the block, while using var → it can be accessed.
 
 
 
