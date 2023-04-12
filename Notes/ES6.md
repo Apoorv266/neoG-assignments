@@ -141,4 +141,19 @@ console.log(productFunc(2, 4))
 // output - 8
 ```
 
->In the above example, we can see that, the default value of 2 is ignored and the argument passed that is 4 is utilized. Here 2 and 4 is multiplied to give result of 8. Instead of 2 and default value = 2 multiplication. 
+>In the above example, we can see that, the default value of 2 is ignored and the argument passed that is 4 is utilized. Here 2 and 4 is multiplied to give result of 8. Instead of 2 and default value = 2 multiplication.
+
+### How can we pass default parameter for first argument ?
+
+```
+If we want to set a default value to the first argument, this is the way 
+
+const multiply = (a=3,b) => a*b;
+console.log(multiply(,2)); // it gives syntax error
+
+// correct way
+const multiply = (a=3,b) => a*b
+console.log(multiply(undefined,2)); // output would be 6
+```
+
+>**Note :**  We have to pass undefined if we want to set a default value to the first argument.
