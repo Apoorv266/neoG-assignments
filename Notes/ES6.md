@@ -160,7 +160,7 @@ console.log(multiply(undefined,2)); // output would be 6
 
 
 
-## Destructuring
+## Destructuring and restructuring
 
 Destructuring allows us to extract values from arrays & objects and assign them to variables in a more concise and readable way.
 
@@ -183,16 +183,18 @@ const user = {name: "Rohan", age: "20"};
 const { name, age } = user;
 ```
 
->We can rename the object properties in an object and can use them in future using Restructuring.
+>We can rename the object properties in an object and can use them in future using **Restructuring**.
 
 
 ```JS
 const user = {name: "Rohan", age: "20"};
 
-const { name: userName, age: userAge } = user;
+const { name: userName, age: userAge } = user;  // restructuring
 ```
 
 >In the above example, we first destructured name and age property from user object and then reassigned it with userName and userAge.
+
+>See, the above variables name and age were changed to userName and userAge using restructuring.
 
 ### How to destructure arrays ?
 Arrays can be destructured by using [] and then assigning a variable into it.
@@ -223,3 +225,40 @@ console.log(spreadExample(obj))
 ```
 
 >In this code we have destructured a and b property from obj object while passing them as parameters.
+
+
+## Rest and Spread Operators
+
+### Rest 
+
+- With the Rest parameter, we can create functions that can take in a variable number of arguments. These arguments are stored in an array, which can be accessed from within the function.
+
+- indicated by the use of the spread operator followed by a parameter name with three dots `(...parameterName)`.
+
+```JS
+const restExample = (a, ...rest) => {
+    console.log(a, rest);
+}
+
+console.log(restExample(2, 3, 4, 5, 6, 7, 8, 9, 10));
+```
+
+The output would be 2 [3, 4, 5, 6, 7, 8, 9, 10].
+
+In the above example, a was assigned to first value of array that is a and rest of the array items will be stored in rest array with the help of rest operator(...).
+
+### Spread
+
+- The output would be `2 [3, 4, 5, 6, 7, 8, 9, 10]`.
+
+- The spread operator is a way to copy the contents of one array or object into a new array or object, by using three dots (**`...`**) followed by the original array or object. example:
+
+```JS
+const myArray = [1, 2, 3];
+
+const newArray = [...myArray, 4, 5, 6];
+
+console.log(newArray); // Output: [1, 2, 3, 4, 5, 6]
+```
+
+In the above example , we have created a newArray array by first spreading(copying) the values of myArray array and added 2 more values that is 4 and 5.
