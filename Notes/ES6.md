@@ -65,7 +65,7 @@ console.log(a); // Output: 2
 
 Ok, so it seems let works only inside those brackets {..} and not outside. These {...} are called blocks, where code is written and let is block scoped. That means variable declared inside a block using let is not accessible outside the block, while using var → it can be accessed.
 
-### How re redeclare variables?
+### How to redeclare variables?
 
 Here `a` was reassigned the value of `100`, So `42` was printed. Here `a` is declared outside so it can be accessed inside, if it would have been declared inside, it couldn’t have been accessed outside. Similarly `const` keyword is used for declaring, however we **can’t reassign** a value to `const` ⇒ It will throw an **error!** 
 
@@ -91,6 +91,14 @@ something()
 ```
 
 Here `var` does not gives reference error instead gives undefined. This is called hoisting, which we will study later. If we used `let/const` it would have given an error.
+
+>### Key Takeaway :
+
+1. Always use `const` unless required otherwise
+2. Use `let` when you want to change the value
+3. Define all variables at the top of the scope
+4. Name your variables differently
+5. Stop using `var` from now on
 
 
 
