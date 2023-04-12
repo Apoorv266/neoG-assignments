@@ -2,6 +2,14 @@
 
 ## Setup up Process of react router
 
+```mermaid
+flowchart TD
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
+  
  
 ## What is a route?
 
@@ -85,7 +93,37 @@ export default function App() {
 
 In a category listing page, on click of view details for each product, navigate to a page which shows the details of that particular product only. The URL should be unique for each product.
 
-[code]
+```JSs
+export function ProductCard({
+  id,
+  name,
+  price,
+  memory,
+  currency,
+  details,
+  noDetail
+}) {
+  return (
+    <li
+      style={{
+        padding: "1rem",
+        listStyle: "none",
+        margin: "1rem",
+        border: "1px solid #efefef"
+      }}
+    >
+      <div style={{ fontSize: "large" }}>
+        {name} {memory} GB
+      </div>
+      <div>
+        Price: {price} {currency}
+      </div>
+      {noDetail && <Link to={`/product/${id}`}> View Details </Link>}
+      {!noDetail && <p> {details} </p>}
+    </li>
+  );
+}
+```
 
 - We created a component named Category which is rendering the product array.
 - We have created a Link with value “View details” and has a path “/product/${id}”.This will pass the id of particular map item into the route URL and as well as in the rendered component.
