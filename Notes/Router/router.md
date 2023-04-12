@@ -4,9 +4,8 @@
 
 ```mermaid
 flowchart TD
-    A-->B;
-    A-->C;
-    B-->D;
+    A[Install react-router and react-router-dom as dependencies(The routing elements are provided by the react-router-dom. So you need to add react-router-dom as dependency first.)]-->B;
+    B-->C;
     C-->D;
 ```
   
