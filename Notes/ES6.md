@@ -18,14 +18,14 @@ Arrow function is a syntax introduced in ES6. It is an easier way of writing fun
 
 Example, The below function takes in a and b as parameters and returns the sum of a and b.  
 
-```
+```js
 function sum ( a,b ) { 
 return a+b; }
 ```
 
 ### Let us see how a function was created in ES6
 
-```
+```js
 const sum = ( a,b ) => { return a+b; } 
 ```
 
@@ -43,7 +43,7 @@ const sum = ( a,b ) => { return a+b; }
 
 5. Now open curly brackets {} and return the output else skip {} and return if there is single return statement.
 
-```
+```js
 ES5 function :-
 
 function sum ( a,b ) { 
@@ -59,7 +59,7 @@ const sum = ( a,b ) => { return a+b; }
 
 -If you use { } in arrow function, you need to use return to return a value that you want. 
 
-```
+```js
 function add10To(num) {
 	return num + 10;
 }
@@ -68,13 +68,13 @@ function add10To(num) {
 
 -If there is just one line to return we don’t need to use {} and return . Arrow function automatically does that.
 
-```
+```js
 const add10To = (num) => (num + 10)
 ```
 
 -If there is only one parameter, we don’t need to use () in parameter as well as in return statement.
 
-```
+```js
 const add10To = num => num + 10;
 ```
 
@@ -82,7 +82,7 @@ const add10To = num => num + 10;
 
 If there is single object that has to be returned then it should be done as :-
 
-```
+```js
 const objFuncs = a => ({value: a});
 ```
 
@@ -102,7 +102,7 @@ Here, () were used for 1 line as well because, the objects {} might be understoo
 
 -With the introduction of default parameters we can set the default value of parameters which will be used when only a single argument is passed.
 
-```
+```js
 function sum(a,b) {
 	return a + b;
 }
@@ -113,7 +113,7 @@ console.log(sum(2)); // Output: NaN
 
 #### ES5 way to add default parameter 
 
-```
+```js
 const sum = ( a,b ) => { 
     if(b==undefined) { b=0 } 
     return a+b; } 
@@ -122,7 +122,7 @@ const sum = ( a,b ) => {
 
 #### Lets see ES6 way to add default parameter
 
-```
+```js
 const sum = (a, b=0) => a+b 
 ```
 
@@ -132,7 +132,7 @@ const sum = (a, b=0) => a+b
 
 If both the arguments are passed then the default value will not be used. Instead the passed argument value will be used. 
 
-```
+```JS
 const productFunc = (a, b = 2) => {
     return a * b
 }
@@ -145,7 +145,7 @@ console.log(productFunc(2, 4))
 
 ### How can we pass default parameter for first argument ?
 
-```
+```js
 If we want to set a default value to the first argument, this is the way 
 
 const multiply = (a=3,b) => a*b;
@@ -157,3 +157,56 @@ console.log(multiply(undefined,2)); // output would be 6
 ```
 
 >**Note :**  We have to pass undefined if we want to set a default value to the first argument.
+
+
+
+## Destructuring
+
+Destructuring allows us to extract values from arrays & objects and assign them to variables in a more concise and readable way.
+
+### ES5 way to get values from object
+
+```JS
+const newObj = { a:23, b:22 }
+
+Now if we have to access a and b we will need to write 
+Now if we have to access a and b we will need to write 
+
+console.log(newObj.a); 
+console.log(newObj.b); 
+```
+
+### ES6 way to get values from object
+
+```js
+const user = {name: "Rohan", age: "20"};
+const { name, age } = user;
+```
+
+>We can rename the object properties in an object and can use them in future using Restructuring.
+
+
+```JS
+const user = {name: "Rohan", age: "20"};
+
+const { name: userName, age: userAge } = user;
+```
+
+>In the above example, we first destructured name and age property from user object and then reassigned it with userName and userAge.
+
+### How to destructure arrays ?
+Arrays can be destructured by using [] and then assigning a variable into it.
+
+The order of the variables during destructuring corresponds to each value of array.
+
+```JS
+const [ a, b ] = [1,2,3,4,5,6,7,8,9,10];
+console.log(a); //1
+console.log(b); //2
+
+
+const [ a, b, ...c ] = [1,2,3,4,5,6,7,8,9,10];
+console.log(a); //1
+console.log(b); //2
+console.log(c); //[3,4,5,6,7,8,9,10]
+```
