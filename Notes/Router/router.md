@@ -4,7 +4,7 @@
 
 ```mermaid
 flowchart TD
-    A[Install react-router and react-router-dom as dependencies]-->B{In index.js , import browserRouter from “react-router-dom”};
+    A[Install react-router and react-router-dom as dependencies]-->B[Install react-router and react-router-dom as dependencies];
     
 ```
   
