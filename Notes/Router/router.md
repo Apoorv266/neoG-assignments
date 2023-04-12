@@ -4,10 +4,9 @@
 
 ```mermaid
 flowchart TD
-    A[Install react-router and react-router-dom as dependencies]-->B;
-    B[In index.js , import browserRouter from “react-router-dom”]-->C;
-    C[wrap app.js in index.js file with browserRouter ]-->D;
-    D[in app.js , import routes and route from “react-router-dom”]-->E{create route inside the routes depending upon the requirments or number of components. }
+    A[Install react-router and react-router-dom as dependencies]-->B[In index.js , import browserRouter from “react-router-dom”];
+    B-->C[wrap app.js in index.js file with browserRouter ];
+    
 ```
   
  
