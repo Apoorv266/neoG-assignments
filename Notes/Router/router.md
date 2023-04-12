@@ -11,6 +11,50 @@ flowchart TD
     
 ```
   
+
+  ## How to setup browerRouter
+
+  - Optional : we can rename browserRouter as router 
+
+- Wrap Router around App.js.
+
+```JS
+  
+import { BrowserRouter as Router } from "react-router-dom";
+
+import App from "./App";
+
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement);
+
+root.render(
+  <StrictMode>
+    <Router>
+      <App />
+    </Router>
+  </StrictMode>
+);
+
+```
+
+## How to create routes?
+
+- Go to app.js.
+- import Routes and route from react-router-dom.
+- After that create a Routes component.
+- inside routes we can create as many individual routes as we want.
+
+```JS
+<Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/category" element={<Category />} />
+        <Route path="/product" element={<ProductDetail />} />
+        <Route path="/wishlist" element={<WishList />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
+```
+ 
+ >In the above code, we created 5 routes for 5 different components.
  
 ## What is a route?
 
