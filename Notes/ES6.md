@@ -7,6 +7,60 @@
 
 ## Topic: let, const & var
 
+### What are let, const & var?
+
+- `let`, `const`, and `var` are all ways to declare variables in JavaScript.
+
+- **`let`** is used to declare a variable that can be reassigned to a new value. This means that the value of the variable can be changed throughout the code.
+
+- **`const`** is used to declare a variable that cannot be reassigned to a new value. This means that the value of the variable remains the same throughout the code.
+
+- Redeclaration of variables declared with `let` & `const` keywords results in a `SyntaxError` whereas variables redeclared with `var` keyword will override the previous declaration.
+
+
+`const` value cannot be changed. Reassigning value to `const` not possible by definition.
+
+```js
+{
+const c; 
+const a = 25;
+const a = 26; // re-assigning is not possible  
+} 
+```
+
+Here `a` is a variable and `const` is a keyword used for variable declaration.
+
+
+    ### Scopes in javascript
+
+    - Types of Scopes in JavaScript:
+
+    - Block scope: Variables that are declared inside a { } block cannot be accessed from outside the block.
+
+    - Function scope: Variables defined inside a function are not accessible from outside the function. Each function creates a new scope.
+
+    - Global scope: Variables declared Globally (outside of any function) have Global Scope and Global variables can be accessed from anywhere in a program.
+
+    ![alt text](./img3.png)
+
+    - What is the scope of var, let, and const?
+    1. `var` can be global/functional scoped and it is used for variables that need to be redeclared and updated.
+    2. `let` is block-scoped and can be updated but not redeclared.
+    3. `const` is also block-scoped but it can't be updated or redeclared.
+
+
+    ### Lets understand scopes with example 
+
+    ```JS
+    if(true){
+	var a = 2;
+	let b = 3;
+console.log(b); // Output: 3
+}
+console.log(a); // Output: 2
+    ```
+
+    Ok, so it seems let works only inside those brackets {..} and not outside. These {...} are called blocks, where code is written and let is block scoped. That means variable declared inside a block using let is not accessible outside the block, while using var → it can be accessed.
 
 
 
@@ -264,3 +318,20 @@ console.log(newArray); // Output: [1, 2, 3, 4, 5, 6]
 ```
 
 In the above example , we have created a newArray array by first spreading(copying) the values of myArray array and added 2 more values that is 4 and 5.
+
+### Difference between rest and spread
+
+1. Rest will always be used in left side and spread on right side of assignment operator during destructuring.
+
+2. Rest will be used as a parameter in function definition, whereas spread will be used in argument while passing as to pass separate values.
+
+### with strings
+
+```JS
+// For strings: It can be used to expand a string in an array.
+
+const Str = 'Hi, there';
+console.log([...Str]);
+
+// ['H', 'i', ',', ' ', 't', 'h', 'e', 'r', 'e']
+```
