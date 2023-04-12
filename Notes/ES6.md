@@ -55,10 +55,14 @@ What is the scope of var, let, and const?
 let and const provide block scoping, and variables declared using these keywords cannot be redeclared within the same scope. Attempting to redeclare a variable will result in a syntax error.
 With var, redeclaring a variable in the same scope is allowed and will simply override the previous declaration, potentially causing unexpected behavior in your code.
 
+>### Why is `const` preferred over `let`?
+`const` is preferred over `let` for variable declaration because `let` allows the variable to be re-assigned. Now this can be a problem because, if the same variable is re-declared and re-assigned for some other unknown reason, the functioning of the program or understanding of the program may become difficult or it can give unexpected results.
+
 
 ### Lets understand scopes with example 
 
 ```JS
+// code example 01
     if(true){
 	var a = 2;
 	let b = 3;
@@ -67,7 +71,19 @@ console.log(b); // Output: 3
 console.log(a); // Output: 2
 ```
 
-Ok, so it seems let works only inside those brackets {..} and not outside. These {...} are called blocks, where code is written and let is block scoped. That means variable declared inside a block using let is not accessible outside the block, while using var → it can be accessed.
+Let works only inside those brackets {..} and not outside. These {...} are called blocks, where code is written and let is block scoped. That means variable declared inside a block using let is not accessible outside the block, while using var → it can be accessed.
+
+
+```JS
+// code example 02
+if(true) {
+	let a = 2;
+	// var a = 2;
+}
+console.log(a) // reference error
+``` 
+
+In this example when console.log tries to log the value of a, it cannot access it. To understand this, recollect block scope for let keyword . The code above gives a reference error. 
 
 ### How to redeclare variables?
 
@@ -104,6 +120,75 @@ Here `var` does not gives reference error instead gives undefined. This is calle
 4. Name your variables differently
 5. Stop using `var` from now on
 
+
+## Temporal Dead zone (TDZ)
+
+> A `let` or `const` variable is said to be in a "temporal dead zone" (TDZ) from the start of the block until code execution reaches the line where the variable is declared and initialized.
+
+
+> While inside the TDZ, the variable has not been initialized with a value, and any attempt to access it will result in a `ReferenceError`. 
+ 
+> The variable is initialized with a value when execution reaches the line of code where it was declared. If no initial value was specified with the variable declaration, it will be initialized with a value of `undefined`.
+
+> This differs from `var` variables, which will return a value of `undefined` if they are accessed before they are declared
+
+
+Lets understand it with an example:-
+
+```
+let a = 100;
+function App() {
+
+// first test 
+	console.log("1",a);
+
+// second test 
+  let a = 42;
+	console.log("2",a);
+
+// third test 
+	{
+		let a = 100; // not accesible outside this. 
+	}
+	console.log("3",a);
+}
+```
+
+**In the first test,**, a reference error will be popped up as a is not declared and we are still trying to access it.This is due to temporal dead zone concept, we cannot access the value of a.You cannot access a before initialising and this comes under the concept of TDZ.
+
+**In the second test,** since the value of `a` is defined so it will `console.log` the value as 42. 
+
+**In the third test,** the variable `a` is declared within the {} parenthesis which will create a block scope so it is only accessible inside and not outside .Previously `let a=42` is already declared, therefore `console.log("3",a)` will fetch the a declared outside the {} block scope.
+
+## Hoisting
+
+- JavaScript Hoisting refers to the process whereby the interpreter appears to move the declaration of functions, variables or classes to the top of their scope, prior to execution of the code.
+
+- Variables declared with `var` keyword (which makes them function scoped) are hoisted which means they are moved on top of their scope before the code is executed and initialized with the value of `undefined` instead of being the subject of the TDZ.
+- These variables when accessed before the user assigns the value to it returns `undefined` instead of throwing an error.
+
+Let's understand it with the help of example -
+
+```JS
+function practice(){
+console.log(a);
+var a = 10; // let is replaced by var
+}
+practice();
+
+
+OUTPUT --> undefined
+```
+
+**Explanation:**
+
+Since the a variable is declared with var, the output gets changed to undefined. This is because, var supports hoisting whereas let and Const don’t. variables declared with var are hoisted at the top of the scope, and as a result it holds a value undefined.
+
+>### Summary:
+- `var` has global scope while `let` has block scope. That means `var` can be accessed outside a block but `let` can’t be.
+- `var` and `let` both are function scoped ⇒ that means if the variable is declared using `var/let` inside a function ⇒ It can’t be accessed outside the function.
+- `var` is hoisted globally, that means it will give undefined if it is accessed before its value is assigned.
+- `let` and `const` will give an error that you won’t be able to access before initialize. They are hosted in something called `TDZ` or Temporal Dead Zone.
 
 
 ## Arrow Function 
