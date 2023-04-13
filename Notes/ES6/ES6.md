@@ -582,3 +582,56 @@ console.log([...Str]);
 
 // ['H', 'i', ',', ' ', 't', 'h', 'e', 'r', 'e']
 ```
+
+## Dynamic fields/ Object literal/ Template literal
+
+- Dynamic fields (Computed Property names) allow us to create dynamic property names while creating properties in an Object. Instead of providing the property name, we can provide an expression in Square brackets ([ ]).
+
+- The [] can be used, and any variable can be used to provide dynamic value to the key.
+
+- The expression is computed and used as the property name. Example:
+
+```JS
+const name = "Bootcamp"
+const nameObj = {[name] : "neoG"}
+nameObj.Bootcamp
+
+Output-
+// neoG
+```
+
+***Explanation***
+
+In the above code, we created a variable name with value "Bootcamp".Then we created an object and assigned the name dynamically with the help of [].Now the new key value pair is accessible.
+
+
+##  Object literals/Shorthand property value
+
+- Object literals shorthand property values is a way to create objects in shorter syntax.
+
+- Object literals work when the key and the variable name we are assigning are same.
+
+### Older way to create object
+
+```JS
+let aaloo = 1
+let bhaaloo = 2
+
+const obj1 = { aaloo: aaloo, bhaaloo: bhaaloo }
+console.log(obj1) // { aaloo: 1, bhaaloo: 2}
+
+```
+
+>In the above code we have manually assigned the key value pairs in the object.
+
+### New way to create object with the help of object literals
+
+```JS
+let aaloo = 1
+let bhaaloo = 2
+
+const obj2 = { aaloo, bhaaloo }
+console.log(obj2) // { aaloo: 1, bhaaloo: 2}
+```
+
+>In the above code, we just have to set the property and the variable matching to the property name will pass their values as key.Note that variable name and property name we are setting value to should be same.
