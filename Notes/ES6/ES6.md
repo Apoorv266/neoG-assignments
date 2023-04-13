@@ -776,3 +776,27 @@ console.log(xyz(2, 5))
 ***Explanation***
 
 In the above example , we first renamed the add function utils.js to sum while exporting it and again renamed sum to xyz while importing it in app.js.
+
+## Nullish coalescing operator '??'
+
+- The nullish coalescing operator is written as two question marks ??.
+
+- ?? treats null and undefined as falsy values. 
+
+- ?? returns the first argument if it’s not null/undefined. Otherwise, the second one.
+
+Example -
+
+```JS
+const myVariable = null
+const myDefault = 5
+
+const myValue = myVariable ?? myDefault
+
+console.log(myValue) // output: 5
+```
+
+***Explanation***
+
+In the above code, we have created a variable called myValue which will take a value depending upon whether
+ myVariable or myDefault is undefined or null.In this case, since myVariable is null, the ?? operator will automatically take the second value that is of myDefault(5) and store it in myValue.Hence the output is 5.
