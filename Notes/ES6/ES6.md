@@ -635,3 +635,113 @@ console.log(obj2) // { aaloo: 1, bhaaloo: 2}
 ```
 
 >In the above code, we just have to set the property and the variable matching to the property name will pass their values as key.Note that variable name and property name we are setting value to should be same.
+
+## Module system
+
+- A module in javascript is referred to as each javascript file.
+
+- Different javascript files(or modules) can communicate through each other with the help of imports and exports.
+
+- We can tranfer a variable or a function from one module to another with the help of imports and exports.
+
+- JavaScript modules allow you to break up your code into separate files.
+
+- This makes it easier to maintain a code-base.
+
+### Exports
+
+- Modules with functions or variables can be stored in any external file.
+
+- There are two types of exports: Named Exports and Default Exports.
+
+#### Named exports
+
+- In named export we will place an "export" keyword infront of the name of the variable or function to be exported.
+
+- With named exports, the name of the exported module and the imported module must match.
+
+***Named export:  In-line individually:***
+```JS
+export const name = "Jesse";
+export const age = 40;
+```
+
+***Named export : All at once at the bottom::***
+```js
+const name = "Jesse";
+const age = 40;
+
+export {name, age};
+```
+
+#### Default exports
+
+- These are exported using the export default syntax and can be imported with any name. 
+
+- With default exports, the name of the imported module and the exported module need not match. This is because there can only be one default export in a file.
+
+
+Example: 
+```JS
+const message = () => {
+const name = "Jesse";
+const age = 40;
+return name + ' is ' + age + 'years old.';
+};
+
+export default message;
+```
+
+### Imports
+
+#### Importing named export
+
+- To import named export we need to use curly braces {} along with individual exact named export name.
+
+```JS
+//  →  /utils.js
+export const add = (a, b) => a + b
+export const square = (a) => a * a
+
+//  →  /app.js
+import { add, square } from './utils'
+
+console.log(add(1, 2))
+console.log(square(2))
+```
+
+#### Importing default export
+
+- We dont have to use curly braces with default exports.
+
+```JS
+//  →  /utils.js
+const square = (a) => a * a
+export default square
+
+//  →  /app.js
+import square from './utils'
+
+console.log(square(2))
+```
+
+### import/export with rename
+
+We can even change the name of variable or function while exporting as well as during importing.
+
+```js
+//  →  /utils.js
+const add = (x, y) => x + y
+export { add as sum }
+
+```
+
+```JS
+//  →  /app.js
+import { sum as xyz } from './utils'
+console.log(xyz(2, 5))
+```
+
+***Explanation***
+
+In the above example , we first renamed the add function utils.js to sum while exporting it and again renamed sum to xyz while importing it in app.js.
