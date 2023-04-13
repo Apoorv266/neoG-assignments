@@ -1,7 +1,5 @@
 ## CSS basics (1)
 
-> Click here to expand notes
-
 ## CSS Terminologies
 
 ![alt text](terms.png)
