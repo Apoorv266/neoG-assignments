@@ -6,7 +6,9 @@
 
 ![alt text](terms.png)
 
-1.**_Selector :_** Selector is used to specifically target a particular html element.
+### **_Selector :_** 
+
+Selector is used to specifically target a particular html element.
 
 #### Types of selectors:
 
@@ -16,13 +18,16 @@
 
 **_element selector:_** Element selectors are used to directly target the html elements and style them.
 
-2.**_Declaration :_** Declaration is denoted by {}.Declaration helps in initialising the style properties and values for a selector.
+### **_Declaration :_** 
+Declaration is denoted by {}.Declaration helps in initialising the style properties and values for a selector.
 
-3.**_Properties :_** Properties are declared inside the declaration.Properties indicates the styles that we have to apply to the selector.
+### **_Properties :_** 
+Properties are declared inside the declaration.Properties indicates the styles that we have to apply to the selector.
 
 Margin, padding, color, background-color are the examples of properties.
 
-4.**_Values :_** Values are assigned to the properties.
+### **_Values :_** 
+Values are assigned to the properties.
 
 For example, margin : 2px, margin is the property with the value 2px.
 
@@ -34,7 +39,8 @@ color: green;
 
 ```
 
-5.**_Rule :_** The combination of selector, declaration along with its properties and values is known as a rule.
+### **_Rule :_** 
+The combination of selector, declaration along with its properties and values is known as a rule.
 
 ```CSS
 // Example of rule -->
