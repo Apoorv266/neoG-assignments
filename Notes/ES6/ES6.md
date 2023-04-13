@@ -211,7 +211,10 @@ Since the a variable is declared with var, the output gets changed to undefined.
 
 Lets suppose we have an object :
 
+### EXAMPLE 1
+
 ```JS
+
 const obj = {val1:1, val2:2};
 obj.val2 = 25;
 ```
@@ -220,10 +223,25 @@ even though the above object is assigned using const we are able to update/This 
 
 ![alt text](./obj1.png)
 
-
+### EXAMPLE 2
 ```js
-EXAMPLE 2
+const obj1 = {val1:1, val2:2};
+const obj2 = {val3:3, val4:4};
+obj1 = obj2
 
+// OUTPUT
+
+VM702:3 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:3:6
+
+```
+
+**Explanation**
+In the above code, 2 different constant reference were created for obj1 and obj2.Now since the objects are initiated with const, we cannot change their constant reference.In line 3rd, we are forcing to change the reference of the obj2 to obj1, and that’s why the compiler shows an error.
+
+
+### EXAMPLE 3
+```js
 const obj3 = {val1:1, val2:2}
 const obj4 = {val1:1, val2:2}
 obj3 === obj4
@@ -231,7 +249,7 @@ obj3 === obj4
 OUTPUT --> false
 ```
 
-**Explaination**
+**Explanation**
 
 Both are pointing to two different references of the memory location even though the key-value properties of both the objects obj3 and obj4 are same.
 
