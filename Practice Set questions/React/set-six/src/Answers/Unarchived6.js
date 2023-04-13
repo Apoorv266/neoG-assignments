@@ -60,7 +60,9 @@ const Unarchived6 = () => {
 
       const [data, setdata] = useState([])
       const [toggle, settoggle] = useState(false)
+
       const headerTxt = toggle ? 'Archived' : 'Unarchived';
+      
       const filteredHabits = data.filter((habit) => habit.archived === toggle);
 
       const fetchFunc = async () => {

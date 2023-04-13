@@ -2,7 +2,10 @@ import React, { useEffect, useState } from 'react'
 
 const ImgList5 = () => {
     const [data, setdata] = useState([]);
-    const [error, seterror] = useState(false)
+    const [error, seterror] = useState({
+      dispError : false,
+      errorMsg : ""
+    })
     const [loading, setloading] = useState(false)
 
 
@@ -50,12 +53,12 @@ const fakeFetch = (url) => {
     const fetchFunc = async () => {
         try {
             setloading(true)
-            const response = await fakeFetch("https://example.com/api/users");
+            const response = await fakeFetch("https//example.com/api/users");
             if (response.status === 200) {
               setdata(response.data);
             }
         } catch (error) {
-            seterror(true)
+            seterror({...error,dispError :!error.dispError , errorMsg : error.message })
         }finally{
             setloading(false)
         }
@@ -68,7 +71,7 @@ const fakeFetch = (url) => {
   return (
     <div>
         {loading && <h2>Loading...</h2>}
-        {error ?  <h1>User data not found</h1> : data.map((item)=>{
+        {error.dispError ?  <h1>{error.errorMsg}</h1> : data.map((item)=>{
             return (
                 <>
                 <img src={item.image} alt="" width={"300px"}/>

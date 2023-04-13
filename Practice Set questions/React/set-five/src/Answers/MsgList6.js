@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 const MsgList6 = () => {
     const [data, setdata] = useState([])
-    const [loading, setloading] = useState(false)
+    const [loading, setloading] = useState({})
     
     const fakeFetch = (url) => {
         return new Promise((resolve, reject) => {

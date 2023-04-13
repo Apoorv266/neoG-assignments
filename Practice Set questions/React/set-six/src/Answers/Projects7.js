@@ -74,7 +74,7 @@ const Projects7 = () => {
         }
     }
 
-    const handleClick = (obj) =>{
+    const handleClick = (obj) => {
         setcurrObj(obj)
         settoggle(!toggle)
     }
@@ -92,19 +92,19 @@ const Projects7 = () => {
                         <p><strong>Name : </strong>{item.title}</p>
                         <p><strong>Description: </strong>{item.description}</p>
 
-                        {toggle && (item.id ===currObj.id)  ?  <button onClick={()=>handleClick(item)}>Hide Details</button> : <button onClick={()=>handleClick(item)}>Show Details</button>}
+                        {toggle && (item.id === currObj.id) ? <button onClick={() => handleClick(item)}>Hide Details</button> : <button onClick={() => handleClick(item)}>Show Details</button>}
 
-                    {toggle && (item.id ===currObj.id) && (
-                        <>
-                        <h1>Project Details</h1>
-                        <p><strong>Name : </strong>{currObj.title}</p>
-                        <p><strong>Description: </strong>{currObj.description}</p>
-                        <p><strong>Technologis : </strong>{currObj.technologies}</p>
-                        <p><strong>Completed: </strong>{currObj.completed ? "Yes": "No"}</p> 
-                        </>
+                        {toggle && (item.id === currObj.id) && (
+                            <>
+                                <h1>Project Details</h1>
+                                <p><strong>Name : </strong>{currObj.title}</p>
+                                <p><strong>Description: </strong>{currObj.description}</p>
+                                <p><strong>Technologis : </strong>{currObj.technologies}</p>
+                                <p><strong>Completed: </strong>{currObj.completed ? "Yes" : "No"}</p>
+                            </>
                         )}
-                        <hr/>
-                        </div>
+                        <hr />
+                    </div>
                 )
             })}
             {/* <h1>Project Details</h1>

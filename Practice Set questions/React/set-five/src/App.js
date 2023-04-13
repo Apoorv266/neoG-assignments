@@ -18,9 +18,9 @@ function App() {
       {/* <Products2/> */}
       {/* <Products3/> */}
       {/* <Img4 title={title} width={width}/> */}
-      {/* <ImgList5/> */}
+      <ImgList5/>
       {/* <MsgList6/> */}
-      <Comments7/>
+      {/* <Comments7/> */}
     </div>
   );
 }

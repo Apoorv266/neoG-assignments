@@ -76,7 +76,7 @@ const HabitTracker3 = () => {
             <li>
             <h2>{item.title}</h2>
             <p>{item.desc}</p>
-            <p><strong>Days Skipped : </strong>{item.daysFollowed} Days</p>
+            <p><strong>Days Skipped : </strong>{item.daysSkipped} Days</p>
             <p><strong>Days Followed : </strong>{item.daysFollowed} Days</p>
             <hr />
             </li>
