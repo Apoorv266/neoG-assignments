@@ -636,6 +636,37 @@ console.log(obj2) // { aaloo: 1, bhaaloo: 2}
 
 >In the above code, we just have to set the property and the variable matching to the property name will pass their values as key.Note that variable name and property name we are setting value to should be same.
 
+## Template literals
+
+- Template Literals use back-ticks (``) rather than the quotes ("") to define a string.
+
+- Template literals allows use to create a string with dynamic variables or values.
+
+- The dynamic expression is enclosed in ${} within template literals.
+
+```JS
+
+// Instead of doing this :-
+let name = 'Tanay'
+let line = 'Helloo ' + name + ' !'
+console.log(line)
+
+// We can do this using template literals:-
+const helloTemp = `Hello ${name} !`
+console.log(helloTemp)
+```
+ 
+#### Template literals with functions
+
+```JS
+const giveMeFive = () => 5
+const line2 = `Hey, my roll is ${giveMeFive()}`
+console.log(line2)
+```
+
+***Explanation***
+In the above example, we have created giveMeFive() function which is returning a string with dynamic value().Now we have used the returned value from the function in template literal.
+
 ## Module system
 
 - A module in javascript is referred to as each javascript file.
