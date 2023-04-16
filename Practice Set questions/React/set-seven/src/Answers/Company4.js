@@ -27,11 +27,15 @@ const Company4 = () => {
     };
 
     const [data, setdata] = useState([])
+
     const [selectedComp, setselectedComp] = useState(null);
+
+
     const filteredItems =
         selectedComp === null
             ? data
             : data.filter((item) => item.company === selectedComp);
+            
 
     const fetchFunc = async () => {
         const response = await fakeFetch("https://example.com/api/users")

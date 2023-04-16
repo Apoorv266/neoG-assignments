@@ -122,32 +122,32 @@ function App() {
   // ]
 
   //9th
-  // const cars = [
-  //   {
-  //     id: 1,
-  //     name: 'supra',
-  //     price: 500000,
-  //     category: 'sports',
-  //   },
-  //   {
-  //     id: 2,
-  //     name: 'A5',
-  //     price: 700000,
-  //     category: 'luxury',
-  //   },
-  //   {
-  //     id: 3,
-  //     name: 'huyara',
-  //     price: 1500000,
-  //     category: 'sports',
-  //   },
-  //   {
-  //     id: 4,
-  //     name: 'agera R',
-  //     price: 3500000,
-  //     category: 'sports',
-  //   },
-  // ]
+  const cars = [
+    {
+      id: 1,
+      name: 'supra',
+      price: 500000,
+      category: 'sports',
+    },
+    {
+      id: 2,
+      name: 'A5',
+      price: 700000,
+      category: 'luxury',
+    },
+    {
+      id: 3,
+      name: 'huyara',
+      price: 1500000,
+      category: 'sports',
+    },
+    {
+      id: 4,
+      name: 'agera R',
+      price: 3500000,
+      category: 'sports',
+    },
+  ]
 
   //10th
   const studentData = [
@@ -181,10 +181,10 @@ function App() {
    {/* <Cartoon4 cartoons={cartoons}/> */}
    {/* <Vegetables5 vegetables={vegetables}/> */}
    {/* <Flowers6 bouquet={bouquet}/> */}
-   <Flowers7 bouquet={bouquet}/> 
+   {/* <Flowers7 bouquet={bouquet}/>  */}
    {/* <Donation8 DonationData={DonationData}/> */}
-   {/* <CategoryCars9 cars={cars}/> */}
-   <Marks10 studentData={studentData}/>
+   <CategoryCars9 cars={cars}/>
+   {/* <Marks10 studentData={studentData}/> */}
     </div>
   );
 }

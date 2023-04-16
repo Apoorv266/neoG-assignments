@@ -6,6 +6,8 @@ import Bonus from './Answers/Bonus';
 import Q4 from './Answers/Q4';
 import Article from './Answers/Article';
 import ColorPicker from './Answers/ColorPicker';
+import HealthQ from './Answers/HealthQ';
+import Bonus2 from './Answers/Bonus2';
 
 function App() {
   const todoItems = [
@@ -87,7 +89,10 @@ const content = 'React is a JavaScript library for building user interfaces.'
       {/* <Bonus products={products}/> */}
       {/* <Q4/> */}
       {/* <Article title={title} content={content}/> */}
-      <ColorPicker/>
+      {/* <ColorPicker/> */}
+      {/* <Q/> */}
+      {/* <HealthQ/> */}
+      <Bonus2/>
     </div>
   );
 }

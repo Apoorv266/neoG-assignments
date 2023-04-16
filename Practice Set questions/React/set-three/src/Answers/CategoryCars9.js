@@ -1,6 +1,7 @@
 import React from 'react'
 
 const CategoryCars9 = ({ cars }) => {
+    
     function carCategoryFunc(cars) {
         return cars.reduce((acc, arr) => {
             const { category } = arr;

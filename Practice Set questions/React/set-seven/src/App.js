@@ -17,13 +17,13 @@ function App() {
     {/* <Weather1/> */}
     {/* <Address2/> */}
     {/* <Movies3/> */}
-    {/* <Company4/> */}
+    <Company4/>
     {/* <Quote5/> */}
     {/* <Genre6/> */}
     {/* <Sort7/> */}
     {/* <Sort8/> */}
     {/* <Stationary9/> */}
-    <Search10></Search10>
+    {/* <Search10></Search10> */}
     </div>
   );
 }
