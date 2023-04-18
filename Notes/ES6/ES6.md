@@ -313,6 +313,9 @@ Since we initialised array with const, it will create a memory reference for it.
 
 ## Arrow Function
 
+>Also known as :-
+>Short arrow function/Lamda function/Fat arrow function
+
 Arrow function is a syntax introduced in ES6. It is an easier way of writing functions, especially if its a one liner function that returns something.
 
 ### Let us first see how a function was created in ES5
@@ -800,3 +803,45 @@ console.log(myValue) // output: 5
 
 In the above code, we have created a variable called myValue which will take a value depending upon whether
  myVariable or myDefault is undefined or null.In this case, since myVariable is null, the ?? operator will automatically take the second value that is of myDefault(5) and store it in myValue.Hence the output is 5.
+
+ ## Optional chaining (?.)
+
+ - The optional chaining (?.) operator accesses an object's property or calls a function.
+
+ -  If the object accessed or function called using this operator is undefined or null, the expression **short circuits** and evaluates to undefined instead of throwing an error.
+
+ - The optional chaining operator ?. takes the reference to its left and checks if it is undefined or null. If the reference is either of these nullish values, the checks will stop and return undefined. Otherwise, the chain of access checks will continue down the happy path to the final value.
+
+ ```JS
+ const adventurer = {
+  name: 'Alice',
+  cat: {
+    name: 'Dinah'
+  }
+};
+
+const dogName = adventurer.dog?.name;
+console.log(dogName);
+// Expected output: undefined
+
+console.log(adventurer.someNonExistentMethod?.());
+// Expected output: undefined
+
+ ```
+
+ ### Syntax
+
+ ```JS
+ obj?.prop       // optional static property access
+obj?.[expr]     // optional dynamic property access
+ ```
+
+ ###Example:
+
+ ```JS
+const value = obj?.propOne?.propTwo?.propThree?.lastProp;
+```
+
+### Explanation:-
+
+In the code snippet above, we are checking if obj is null or undefined, then propOne, then propTwo, and so on. Optional chaining lives up to its name. In the chain of object property access we can check that each value is not undefined or null.

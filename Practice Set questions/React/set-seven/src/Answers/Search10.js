@@ -48,27 +48,18 @@ const Search10 = () => {
 
     const handleChange = (e) => {
         let value = e.target.value
+        console.log(value)
         if (value === "") {
             setfilteredProducts(data)
-            setinputValue(() => value)
+            setinputValue(value)
         } else {
-            setinputValue(() => value)
-            let array = data.filter((item) => item.name.toLowerCase().includes(inputValue))
+            setinputValue(value)
+            let array = data.filter((item) => item.name.toLowerCase().includes(value.toLowerCase()))
             setfilteredProducts(array)
         }
     }
 
-    // alternate way
-    
-// as the setinputValue will fire the inputValue will be set and component will rerender which will create new filteredProducts on every render, and then we will map filteredProducts
 
-    //   const handleChange = (event) => {
-    //     setinputValue(event.target.value.toLowerCase());
-    //   };
-
-    //   const filteredProducts = data.filter((product) =>
-    //     product.name.toLowerCase().includes(inputValue)
-    //   );
     return (
         <div>
             <input type='text' value={inputValue} onChange={handleChange}></input>
@@ -87,3 +78,21 @@ const Search10 = () => {
 }
 
 export default Search10
+
+
+
+
+
+
+
+ // alternate way
+    
+// as the setinputValue will fire the inputValue will be set and component will rerender which will create new filteredProducts on every render, and then we will map filteredProducts
+
+    //   const handleChange = (event) => {
+    //     setinputValue(event.target.value.toLowerCase());
+    //   };
+
+    //   const filteredProducts = data.filter((product) =>
+    //     product.name.toLowerCase().includes(inputValue)
+    //   );
