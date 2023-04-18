@@ -836,7 +836,7 @@ console.log(adventurer.someNonExistentMethod?.());
 obj?.[expr]     // optional dynamic property access
  ```
 
- ###Example:
+ ### Example:
 
  ```JS
 const value = obj?.propOne?.propTwo?.propThree?.lastProp;
