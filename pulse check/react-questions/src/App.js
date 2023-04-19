@@ -8,6 +8,8 @@ import Article from './Answers/Article';
 import ColorPicker from './Answers/ColorPicker';
 import HealthQ from './Answers/HealthQ';
 import Bonus2 from './Answers/Bonus2';
+import Chat from './Answers/Chat';
+import Video from './Answers/Video';
 
 function App() {
   const todoItems = [
@@ -92,8 +94,11 @@ const content = 'React is a JavaScript library for building user interfaces.'
       {/* <ColorPicker/> */}
       {/* <Q/> */}
       {/* <HealthQ/> */}
-      <Bonus2/>
+      {/* <Bonus2/> */}
+      {/* <Chat/> */}
+      <Video/>
     </div>
+
   );
 }
 

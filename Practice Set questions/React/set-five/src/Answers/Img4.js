@@ -33,6 +33,7 @@ const Img4 = ({ title, width }) => {
       setdata(response.data);
     }
   };
+  
   useEffect(() => {
     fetchFunc();
   }, []);
