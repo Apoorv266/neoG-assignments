@@ -45,7 +45,7 @@ const SocialMedia10 = () => {
     }, []);
 
     const handleClick = () => {
-        setdata({ ...data, followers: data.followers + 1 })
+        setdata({ ...data, followers: ++data.followers })
         setdisable(true)
     }
     return (
