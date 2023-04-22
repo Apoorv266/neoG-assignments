@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { cartContext } from "./EcomHome";
 
 const ProductList = () => {
-    const { data, addTocartFunc } = useContext(cartContext);
+    const { data, addTocartFunc , addTowishFunc} = useContext(cartContext);
   return (
     <div>
         <h1>Product Listing</h1>
@@ -15,7 +15,7 @@ const ProductList = () => {
                     <p>Price : Rs. {item.price}</p>
                     <button onClick={() => addTocartFunc(item.id)}>Add to Cart</button>
                     {"  "}
-                    <button>Add to Wishlist</button>
+                    <button onClick={()=>addTowishFunc(item.id)}>Add to Wishlist</button>
                     <hr/>
                 </div>
             )
