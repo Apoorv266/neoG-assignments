@@ -7,6 +7,8 @@ import Wishlist from "./Wishlist"
 import { Routes, Route } from "react-router-dom";
 import { cartContext } from './CartContext';
 import CartContextProvider from './CartContext';
+import AboutItem from './AboutItem';
+import ErrorPage from './ErrorPage';
 export { cartContext }
 
 const EcomHome = () => {
@@ -20,6 +22,8 @@ const EcomHome = () => {
             <Route path='/' element={<ProductList />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/wishlist' element={<Wishlist/>} />
+            <Route path='/about/:productId' element={<AboutItem/>} />
+            <Route path='*' element={<ErrorPage/>} />
           </Routes>
         </CartContextProvider>
       </Router>

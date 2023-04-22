@@ -3,21 +3,21 @@ import { useContext } from "react";
 import { cartContext } from "./EcomHome";
 
 const Wishlist = () => {
-  const { data, dltFrmwishFunc , wishListNo} = useContext(cartContext);
+  const { data, wishlistFunc} = useContext(cartContext);
   let emptyWishList = true
   return (
     <div>
-      {wishListNo !== 0 && <h1>Total Items : {wishListNo}</h1>}
       <h1>Wishlist Listing</h1>
+      <h1>Total Items : {data.reduce((acc, arr) => arr.wishlist === true ? acc + 1: acc, 0)}</h1>
       {data.map((item) => {
-        if (item.wislist) {
+        if (item.wishlist) {
           return (
             <div key={item.id}>
               {emptyWishList = false}
               <h3>{item.name}</h3>
               <p>{item.description}</p>
               <p>Price : Rs. {item.price}</p>
-              <button onClick={() => dltFrmwishFunc(item.id)}>Remove From WishList</button>
+              <button onClick={() => wishlistFunc(item.id)}>Remove From WishList</button>
               {"  "}
               <hr />
             </div>

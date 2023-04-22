@@ -3,12 +3,12 @@ import { useContext } from "react";
 import { cartContext } from "./EcomHome";
 
 const Cart = () => {
-  const { data, dltFrmCartFunc , cartNo} = useContext(cartContext);
+  const { data , cartFunc} = useContext(cartContext);
   let emptyCart = true
   return (
     <div>
-      {cartNo !== 0 && <h1>Total Items : {cartNo}</h1>}
       <h1>Cart Listing</h1>
+       <h1>Total Items : {data.reduce((acc, arr) => arr.cart === true ? acc + 1: acc, 0)}</h1>
       {data.map((item) => {
         if (item.cart) {
           return (
@@ -17,7 +17,7 @@ const Cart = () => {
               <h3>{item.name}</h3>
               <p>{item.description}</p>
               <p>Price : Rs. {item.price}</p>
-              <button onClick={() => dltFrmCartFunc(item.id)}>Remove From Cart</button>
+              <button onClick={() => cartFunc(item.id)}>Remove From Cart</button>
               {"  "}
               <hr />
             </div>
