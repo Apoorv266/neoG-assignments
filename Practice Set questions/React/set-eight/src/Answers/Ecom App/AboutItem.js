@@ -8,7 +8,7 @@ const AboutItem = () => {
     const { data } = useContext(cartContext);
     const { productId } = useParams();
     let itemObj = data.find(item => item.id === Number(productId))
-    console.log(productId)
+   
     return (
         <>
             {itemObj ? (

@@ -1,23 +1,29 @@
 import React, { useContext } from 'react'
 import TodoContext from './TodoContext'
+import { Link } from 'react-router-dom'
 
 const DoneTodo = () => {
-    const { todoData } = useContext(TodoContext)
-    let newArr = todoData.filter(item => item.com)
+  const { todoData } = useContext(TodoContext)
+  let newArr = todoData.filter(item => !item.isCompleted)
   return (
-    <div>{
-        newArr.map((item) =>{
-            return (
-                <div key={item.id} >
-                            <div style={{textDecoration: item.isCompleted ? "none" : "line-through"}}>
-                            <h2>{item.title}</h2>
-                            <p>Desc : {item.description}</p>
-                            </div>
-                            <hr />
-                        </div>
-            )
-        })
-        }</div>
+    <div>
+      <h1>Total Done items : {newArr.length}</h1>
+      {
+      newArr.map((item) => {
+        return (
+          <div key={item.id} >
+            <div>
+              <h2>{item.title}</h2>
+              <p>Desc : {item.description}</p>
+            </div>
+            <Link to={`/todo/${item.id}`}>
+                <button>  Expand Todo</button>
+              </Link>
+            <hr />
+          </div>
+        )
+      })
+    }</div>
   )
 }
 
