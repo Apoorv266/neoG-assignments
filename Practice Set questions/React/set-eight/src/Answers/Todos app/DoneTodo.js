@@ -9,21 +9,21 @@ const DoneTodo = () => {
     <div>
       <h1>Total Done items : {newArr.length}</h1>
       {
-      newArr.map((item) => {
-        return (
-          <div key={item.id} >
-            <div>
-              <h2>{item.title}</h2>
-              <p>Desc : {item.description}</p>
-            </div>
-            <Link to={`/todo/${item.id}`}>
+        newArr.map((item) => {
+          return (
+            <div key={item.id} >
+              <div>
+                <h2>{item.title}</h2>
+                <p>Desc : {item.description}</p>
+              </div>
+              <Link to={`/todo/${item.id}`}>
                 <button>  Expand Todo</button>
               </Link>
-            <hr />
-          </div>
-        )
-      })
-    }</div>
+              <hr />
+            </div>
+          )
+        })
+      }</div>
   )
 }
 
