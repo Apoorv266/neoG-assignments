@@ -8,9 +8,9 @@ const EachMsg = () => {
     let msgObj = [...emailData.emails, ...emailData.sent].find((item) => item.id === Number(msgId))
     return (
         <div>
-        <h1>{msgObj.subject}</h1> 
-        {msgObj.to ? <p><strong>To : </strong> {msgObj.to}</p> : <p><strong>Sender : </strong> {msgObj.sender}</p>}
-        <p><strong>Message : </strong> {msgObj.message}</p>
+        <h1>{msgObj?.subject}</h1> 
+        {msgObj?.to ? <p><strong>To : </strong> {msgObj?.to}</p> : <p><strong>Sender : </strong> {msgObj?.sender}</p>}
+        <p><strong>Message : </strong> {msgObj?.message}</p>
         </div>
 
     )

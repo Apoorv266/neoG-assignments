@@ -14,6 +14,7 @@ const LandingPage = () => {
                 <Link to={"/sent"}>Sent</Link>
                 <hr />
                 <Routes>
+                    <Route path="/" element={<></>} />
                     <Route path='/inbox' element={<Inbox />} />
                     <Route path='/sent' element={<Sent />} />
                     <Route path='/message/id/:msgId' element={<EachMsg />} />
