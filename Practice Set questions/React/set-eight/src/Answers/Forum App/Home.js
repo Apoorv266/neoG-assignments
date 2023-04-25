@@ -1,9 +1,16 @@
 import React from 'react'
-import ForumHome from './ForumHome'
+import { Link } from 'react-router-dom'
+
 
 const Home = () => {
   return (
-    <ForumHome/>
+    <div>
+        <h1>Welcome User !</h1>
+         <Link to={"/questions"}>
+                Show question List
+            </Link>
+    </div>
+   
   )
 }
 

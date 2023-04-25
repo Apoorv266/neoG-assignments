@@ -17,9 +17,35 @@ const ForumContextFunc = ({ children }) => {
         fetchFunc()
     }, [])
 
+
+    const handleUpvote = (currId, currIndex) => {
+        let answerObj = forumData[currIndex]
+        let newArr = [...forumData]
+        if (currIndex !== 0) {
+            newArr.splice(currIndex, 1)
+            newArr.splice(currIndex - 1, 0, answerObj)
+            setforumData(newArr)
+        }else{
+            setforumData(newArr)
+        }
+    }
+
+
+    const handleDownvote = (currId, currIndex) =>{
+        let answerObj = forumData[currIndex]
+        let newArr = [...forumData]
+        if (currIndex !== newArr.length - 1) {
+            newArr.splice(currIndex, 1)
+            newArr.splice(currIndex + 1, 0, answerObj)
+            setforumData(newArr)
+        }else{
+            setforumData(newArr)
+        }
+    }
+
     return (
         <div>
-            <ForumContext.Provider value={{ forumData }}>
+            <ForumContext.Provider value={{ forumData, handleUpvote, handleDownvote }}>
                 {children}
             </ForumContext.Provider>
         </div>
