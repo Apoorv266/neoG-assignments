@@ -10,6 +10,8 @@ import HealthQ from './Answers/HealthQ';
 import Bonus2 from './Answers/Bonus2';
 import Chat from './Answers/Chat';
 import Video from './Answers/Video';
+import UserProfile from './Answers/UserProfile';
+import FollowUser from './Answers/Follow/FollowUser';
 
 function App() {
   const todoItems = [
@@ -83,7 +85,7 @@ function App() {
   ]
 
   const title = 'React is awesome'
-const content = 'React is a JavaScript library for building user interfaces.'
+  const content = 'React is a JavaScript library for building user interfaces.'
   return (
     <div className="App">
       {/* <Q1/> */}
@@ -96,7 +98,9 @@ const content = 'React is a JavaScript library for building user interfaces.'
       {/* <HealthQ/> */}
       {/* <Bonus2/> */}
       {/* <Chat/> */}
-      <Video/>
+      {/* <Video /> */}
+      {/* <UserProfile/> */}
+      <FollowUser/>
     </div>
 
   );
