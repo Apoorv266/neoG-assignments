@@ -12,6 +12,7 @@ import Chat from './Answers/Chat';
 import Video from './Answers/Video';
 import UserProfile from './Answers/UserProfile';
 import FollowUser from './Answers/Follow/FollowUser';
+import Orders from './Answers/Orders';
 
 function App() {
   const todoItems = [
@@ -96,11 +97,12 @@ function App() {
       {/* <ColorPicker/> */}
       {/* <Q/> */}
       {/* <HealthQ/> */}
-      <Bonus2/>
+      {/* <Bonus2/> */}
       {/* <Chat/> */}
       {/* <Video /> */}
       {/* <UserProfile/> */}
       {/* <FollowUser/> */}
+      <Orders/>
     </div>
 
   );
