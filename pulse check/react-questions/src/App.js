@@ -96,11 +96,11 @@ function App() {
       {/* <ColorPicker/> */}
       {/* <Q/> */}
       {/* <HealthQ/> */}
-      {/* <Bonus2/> */}
+      <Bonus2/>
       {/* <Chat/> */}
       {/* <Video /> */}
       {/* <UserProfile/> */}
-      <FollowUser/>
+      {/* <FollowUser/> */}
     </div>
 
   );

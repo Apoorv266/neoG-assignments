@@ -35,7 +35,7 @@ const UserProfile = () => {
     const fetchFunc = async () => {
         try {
             setloader(true)
-            const response = await fakeFetch("https://exame.com/api/profile")
+            const response = await fakeFetch("https://example.com/api/profile")
             if (response.status === 200) {
                 setdata(response.data.profiles)
             }
@@ -51,12 +51,13 @@ const UserProfile = () => {
     useEffect(() => {
         fetchFunc()
     }, [])
+console.log(data)
     return (
         <div>
             <h1>User Profile</h1>
-            {loader && "Loading..."}
+            {loader && "Loading..." }
 
-            {(Object.keys(data) !== 0 && !loader) && (<div>
+            {Object.keys(data).length !== 0  && (<div>
                 <p>Name: {data.name}</p>
                 <p>Age: {data.age}</p>
                 <p>Gender:{data.gender}</p>
