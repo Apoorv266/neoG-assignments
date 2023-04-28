@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react'
 import { fakeFetch } from './FakeFetch'
 
-const booksContext = createContext()
+export const booksContext = createContext()
 const BookContextFunc = ({children}) => {
     const [data, setdata] = useState([])
     const [userDetails, setuserDetails] = useState({})
