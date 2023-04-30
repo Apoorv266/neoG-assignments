@@ -3,8 +3,10 @@ import { booksContext } from "./BookContext";
 import { Link } from "react-router-dom";
 
 const AllBooks = () => {
-  const { data, addToFavFunc , addToReadFunc} = useContext(booksContext);
+  const { data, addToFavFunc , addToReadFunc, loader} = useContext(booksContext);
   return (
+    <>
+    {loader && <h1>Loading...</h1>}
     <div style={{ display: "flex", flexWrap: "wrap" }}>
       {data.map((item) => {
         return (
@@ -30,6 +32,7 @@ const AllBooks = () => {
         );
       })}
     </div>
+    </>
   );
 };
 

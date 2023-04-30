@@ -5,6 +5,7 @@ import AllBooks from './AllBooks'
 import { booksContext } from './BookContext'
 import Favourite from './Favourite'
 import ReadBooks from './ReadBooks'
+import BookProfile from './BookProfile'
 
 const BookHome = () => {
   const {data} = useContext(booksContext)
@@ -21,12 +22,14 @@ const BookHome = () => {
     <div>
       <Link to={"/"}>All Books</Link>{'    '}
       <Link to={"/favourites"}>Favourites{" "}({favCount})</Link>{'    '}
-      <Link to={"/reads"}>Reads {"  "} ({ReadCount})</Link>
+      <Link to={"/reads"}>Reads {"  "} ({ReadCount})</Link>{'    '}
+      <Link to={"/profile"}>Profile</Link>
 
       <Routes>
         <Route path='/' element={<AllBooks/>}/>
         <Route path='/favourites' element={<Favourite/>}/>
         <Route path='/reads' element={<ReadBooks/>}/>
+        <Route path='/profile' element={<BookProfile/>}/>
       </Routes>
     </div>
   )
