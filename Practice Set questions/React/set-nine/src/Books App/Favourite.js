@@ -2,8 +2,10 @@ import React, { useContext } from 'react'
 import { booksContext } from './BookContext'
 
 const Favourite = () => {
-    const {data} = useContext(booksContext)
+    const {data, addToReadFunc} = useContext(booksContext)
   return (
+    <>
+    <h1>Favourite books</h1>
     <div style={{display: "flex", flexWrap: "wrap"}}>
 
     {data.filter(item => item.toFav).map((item)=>{
@@ -13,12 +15,13 @@ const Favourite = () => {
           <p>{item.id}</p>
           <p>Title : {item.title}</p>
           <p>Author : {item.author}</p>
-          <button>Mark as read</button>
+          <button disabled={item.toRead} onClick={() => addToReadFunc(item.id)}>{item.toRead ? "Already Red" : "Mark as read"}</button>
         </div>
 
       )
     })}
   </div>
+  </>
   )
 }
 

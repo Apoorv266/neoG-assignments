@@ -3,7 +3,7 @@ import { booksContext } from "./BookContext";
 import { Link } from "react-router-dom";
 
 const AllBooks = () => {
-  const { data, addToFavFunc } = useContext(booksContext);
+  const { data, addToFavFunc , addToReadFunc} = useContext(booksContext);
   return (
     <div style={{ display: "flex", flexWrap: "wrap" }}>
       {data.map((item) => {
@@ -21,7 +21,7 @@ const AllBooks = () => {
             <p>{item.id}</p>
             <p>Title : {item.title}</p>
             <p>Author : {item.author}</p>
-            <button>Mark as read</button>
+            <button disabled={item.toRead} onClick={() => addToReadFunc(item.id)}>{item.toRead ? "Already Red" : "Mark as read"}</button>
             {item.toFav ? <Link to={"/favourites"}><button>Go to Fav</button></Link> :  <button onClick={() => addToFavFunc(item.id)}>
             Add to favourite
             </button>}

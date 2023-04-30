@@ -21,7 +21,7 @@ const BookContextFunc = ({ children }) => {
     }
 
     const addToReadFunc = (currId) => {
-        let favArray = data.map((item) => item.id === currId ? { ...item, toFav: true } : item)
+        let favArray = data.map((item) => item.id === currId ? { ...item, toRead: true } : item)
         setdata(favArray)
     }
 
