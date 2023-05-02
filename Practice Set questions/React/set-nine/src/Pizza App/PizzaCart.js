@@ -1,14 +1,30 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { pizzaContext } from './PizzaContext';
 import Navbar from './Navbar';
 
 const PizzaCart = () => {
     const { data } = useContext(pizzaContext)
-  return (
-    <div>
-        <Navbar/>
-        <h1>My Cart</h1>
-        <div style={{ display: "flex", flexWrap: "wrap" }}>
+    const [discount, setdiscount] = useState(0)
+    const { deliveryTime, price } = data.reduce((acc, arr) => {
+        if (arr.toCart) {
+            acc.deliveryTime = acc.deliveryTime + arr.delivery_time
+            acc.price = acc.price + arr.price
+        }
+        return acc
+    }, { deliveryTime: 0, price: 0 })
+
+
+    const handleDiscount = () =>{
+        setdiscount(5)
+    }
+    return (
+        <div>
+            <Navbar />
+            <h1>My Cart</h1>
+            {deliveryTime !== 0 && price !== 0 ? (<div><h3>Cart overview</h3>
+                <p><strong>Total delivery time : {deliveryTime} Minutes</strong></p> <p><strong>Total price : Rs. {discount === 0 ? price : `${price - discount} (-Rs 5)`}</strong></p><button onClick={handleDiscount}>Apply coupon</button></div>) : <h1>Cart is empty !</h1>}
+
+            <div style={{ display: "flex", flexWrap: "wrap" }}>
                 {data.filter(item => item.toCart).map((item) => {
                     return (
                         <div
@@ -31,8 +47,8 @@ const PizzaCart = () => {
                     );
                 })}
             </div>
-    </div>
-  )
+        </div>
+    )
 }
 
 export default PizzaCart

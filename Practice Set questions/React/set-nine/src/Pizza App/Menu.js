@@ -2,14 +2,16 @@ import React, { useContext } from 'react'
 import { pizzaContext } from './PizzaContext'
 import Navbar from '../Pizza App/Navbar'
 import { Link } from 'react-router-dom'
+import Filters from './Filters'
 
 const Menu = () => {
-    const { data, handleToCart } = useContext(pizzaContext)
+    const { handleToCart, filteredData } = useContext(pizzaContext)
     return (
         <div>
             <Navbar/>
+            <Filters/>
             <div style={{ display: "flex", flexWrap: "wrap" }}>
-                {data.map((item) => {
+                {filteredData.map((item) => {
                     return (
                         <div
                             key={item.id}
