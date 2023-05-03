@@ -3,13 +3,11 @@ import { pizzaContext } from './PizzaContext';
 import Navbar from './Navbar';
 
 const PizzaCart = () => {
-    const { data } = useContext(pizzaContext)
+    const { cartData } = useContext(pizzaContext)
     const [discount, setdiscount] = useState(0)
-    const { deliveryTime, price } = data.reduce((acc, arr) => {
-        if (arr.toCart) {
+    const { deliveryTime, price } = cartData.reduce((acc, arr) => {
             acc.deliveryTime = acc.deliveryTime + arr.delivery_time
             acc.price = acc.price + arr.price
-        }
         return acc
     }, { deliveryTime: 0, price: 0 })
 
@@ -25,7 +23,7 @@ const PizzaCart = () => {
                 <p><strong>Total delivery time : {deliveryTime} Minutes</strong></p> <p><strong>Total price : Rs. {discount === 0 ? price : `${price - discount} (-Rs 5)`}</strong></p><button onClick={handleDiscount}>Apply coupon</button></div>) : <h1>Cart is empty !</h1>}
 
             <div style={{ display: "flex", flexWrap: "wrap" }}>
-                {data.filter(item => item.toCart).map((item) => {
+                {cartData.map((item) => {
                     return (
                         <div
                             key={item.id}

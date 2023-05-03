@@ -29,7 +29,7 @@ const Menu = () => {
                             <p>Delivery Time : {item.delivery_time}</p>
 
                             {item.toCart ? <Link to={"/cart"}><button>Go to Cart</button></Link> : 
-                            <button onClick={() => handleToCart(item.id)}>Add to cart</button>}
+                            <button onClick={() => handleToCart(item)}>Add to cart</button>}
 
                         </div>
                     );

@@ -5,8 +5,9 @@ import { fakeFetch } from './FakeFetch'
 export const pizzaContext = createContext()
 const PizzaContextFunc = ({ children }) => {
   const [data, setdata] = useState([])
-  const [inputVal, setinputVal] = useState("")
+  const [cartData, setcartData] = useState([])
   const [originalData, setoriginalData] = useState([])
+  const [inputVal, setinputVal] = useState("")
   const [filterState, setfilterState] = useState({
     box1: false,
     box2: false
@@ -17,9 +18,9 @@ const PizzaContextFunc = ({ children }) => {
 
   let filteredData = inputVal ? data : data.filter((item) => item.name.toLowerCase().includes(inputVal.toLowerCase()))
 
-  let sortedData = sort ? 
-  filteredData.sort((item1, item2) => sort === 'lowtohigh' ? item1.price - item2.price : item2.price - item1.price) : 
-  filteredData;
+  let sortedData = sort ?
+    filteredData.sort((item1, item2) => sort === 'lowtohigh' ? item1.price - item2.price : item2.price - item1.price) :
+    filteredData;
 
 
   const handleBox1 = () => {
@@ -53,7 +54,7 @@ const PizzaContextFunc = ({ children }) => {
       setdata(originalData)
     }
   }, [filterState])
-  
+
 
   const fetchFunc = async () => {
     const response = await fakeFetch("https://example.com/api/menu")
@@ -63,9 +64,10 @@ const PizzaContextFunc = ({ children }) => {
     }
   }
 
-  const handleToCart = (currId) => {
-    let newArr = data.map((item) => item.id === currId ? { ...item, toCart: true } : item)
-    setdata(newArr)
+  const handleToCart = (item) => {
+    if (!cartData.includes(item)) {
+      setcartData((cartData) => [...cartData, item]);
+    }
   }
 
   useEffect(() => {
@@ -73,7 +75,7 @@ const PizzaContextFunc = ({ children }) => {
   }, [])
 
   return (
-    <pizzaContext.Provider value={{ data, handleToCart, inputVal, setinputVal, sortedData, handleBox1, handleBox2 , handleSort1, handleSort2}}>{children}</pizzaContext.Provider>
+    <pizzaContext.Provider value={{ data, handleToCart, inputVal, setinputVal, sortedData, handleBox1, handleBox2, handleSort1, handleSort2, cartData }}>{children}</pizzaContext.Provider>
   )
 }
 
