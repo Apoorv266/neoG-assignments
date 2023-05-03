@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import Filters from './Filters'
 
 const Menu = () => {
-    const { handleToCart, sortedData } = useContext(pizzaContext)
+    const { handleToCart, sortedData, cartData } = useContext(pizzaContext)
     return (
         <div>
             <Navbar/>
@@ -28,7 +28,7 @@ const Menu = () => {
                             <p>Price : {item.price}</p>
                             <p>Delivery Time : {item.delivery_time}</p>
 
-                            {item.toCart ? <Link to={"/cart"}><button>Go to Cart</button></Link> : 
+                            {cartData.includes(item) ? <Link to={"/cart"}><button>Go to Cart</button></Link> : 
                             <button onClick={() => handleToCart(item)}>Add to cart</button>}
 
                         </div>
