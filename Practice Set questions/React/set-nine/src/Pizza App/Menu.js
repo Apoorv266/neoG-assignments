@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom'
 import Filters from './Filters'
 
 const Menu = () => {
-    const { handleToCart, filteredData } = useContext(pizzaContext)
+    const { handleToCart, sortedData } = useContext(pizzaContext)
     return (
         <div>
             <Navbar/>
             <Filters/>
             <div style={{ display: "flex", flexWrap: "wrap" }}>
-                {filteredData.map((item) => {
+                {sortedData.map((item) => {
                     return (
                         <div
                             key={item.id}
