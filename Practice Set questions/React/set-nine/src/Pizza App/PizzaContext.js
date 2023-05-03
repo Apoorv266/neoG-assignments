@@ -16,7 +16,8 @@ const PizzaContextFunc = ({ children }) => {
   const [sort, setsort] = useState("")
 
 
-  let filteredData = inputVal ? data : data.filter((item) => item.name.toLowerCase().includes(inputVal.toLowerCase()))
+  let filteredData = inputVal ? data.filter((item) => item.name.toLowerCase().includes(inputVal.toLowerCase()))
+ :  data  
 
   let sortedData = sort ?
     filteredData.sort((item1, item2) => sort === 'lowtohigh' ? item1.price - item2.price : item2.price - item1.price) :

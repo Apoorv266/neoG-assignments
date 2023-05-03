@@ -13,6 +13,10 @@ import Video from './Answers/Video';
 import UserProfile from './Answers/UserProfile';
 import FollowUser from './Answers/Follow/FollowUser';
 import Orders from './Answers/Orders';
+import TodoHome from './Answers/Todo/TodoHome';
+import { BrowserRouter } from 'react-router-dom';
+import TodoContextFunc from './Answers/Todo/TodoContext';
+import Ecom from './Answers/Ecom';
 
 function App() {
   const todoItems = [
@@ -102,7 +106,15 @@ function App() {
       {/* <Video /> */}
       {/* <UserProfile/> */}
       {/* <FollowUser/> */}
-      <Orders/>
+      {/* <Orders/> */}
+
+      <BrowserRouter>
+        <TodoContextFunc>
+          <TodoHome />
+        </TodoContextFunc>
+      </BrowserRouter>
+
+      {/* <Ecom/> */}
     </div>
 
   );
