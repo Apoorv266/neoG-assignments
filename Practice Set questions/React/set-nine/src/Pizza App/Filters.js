@@ -2,7 +2,10 @@ import React, { useContext } from 'react'
 import { pizzaContext } from './PizzaContext'
 
 const Filters = () => {
-  const { inputVal, setinputVal, handleBox1, handleBox2, handleSort1, handleSort2 } = useContext(pizzaContext)
+  const { inputVal, setinputVal,
+    //  handleBox1, handleBox2,
+    handleCheckboxInput,
+      handleSort1, handleSort2 } = useContext(pizzaContext)
   return (
     <div>
       <h2>Filters:</h2>
@@ -11,7 +14,7 @@ const Filters = () => {
 
       <input
         type="checkbox"
-        onChange={handleBox1}
+        onChange={()=> handleCheckboxInput("is_vegetarian")}
       />
       <span
       >
@@ -21,7 +24,7 @@ const Filters = () => {
 
       <input
         type="checkbox"
-        onChange={handleBox2}
+        onChange={()=> handleCheckboxInput("is_spicy")}
       />
       <span
       >

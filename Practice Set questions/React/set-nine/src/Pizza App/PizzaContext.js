@@ -8,29 +8,30 @@ const PizzaContextFunc = ({ children }) => {
   const [cartData, setcartData] = useState([])
   const [originalData, setoriginalData] = useState([])
   const [inputVal, setinputVal] = useState("")
-  const [filterState, setfilterState] = useState({
-    box1: false,
-    box2: false
-  })
-
   const [sort, setsort] = useState("")
 
+  // const [filterState, setfilterState] = useState({
+  //   box1: false,
+  //   box2: false
+  // })
+
+  const [checkBox, setcheckBox] = useState([])
+
+  const checkboxData =
+    checkBox.length > 0
+      ? data.filter((item) =>
+        checkBox.every((checkboxItem) => item[checkboxItem])
+      )
+      : data;
 
   let filteredData = inputVal ? data.filter((item) => item.name.toLowerCase().includes(inputVal.toLowerCase()))
- :  data  
+    : checkboxData
 
   let sortedData = sort ?
     filteredData.sort((item1, item2) => sort === 'lowtohigh' ? item1.price - item2.price : item2.price - item1.price) :
     filteredData;
 
 
-  const handleBox1 = () => {
-    setfilterState({ ...filterState, box1: !filterState.box1 })
-  }
-
-  const handleBox2 = () => {
-    setfilterState({ ...filterState, box2: !filterState.box2 })
-  }
 
   const handleSort1 = () => {
     setsort("lowtohigh")
@@ -40,21 +41,40 @@ const PizzaContextFunc = ({ children }) => {
     setsort("hightolow")
   }
 
+  const handleCheckboxInput = (type) => {
+    if (checkBox.includes(type)) {
+      setcheckBox(checkBox.filter((item) => item !== type))
+    } else {
+      setcheckBox([...checkBox, type])
+    }
+  }
 
-  useEffect(() => {
-    if (filterState.box1) {
-      setdata(originalData.filter(item => item.is_vegetarian))
-    }
-    if (filterState.box2) {
-      setdata(originalData.filter(item => item.is_spicy))
-    }
-    if (filterState.box1 && filterState.box2) {
-      setdata(originalData.filter(item => item.is_spicy && item.is_vegetarian))
-    }
-    if (!filterState.box1 && !filterState.box2) {
-      setdata(originalData)
-    }
-  }, [filterState])
+
+  // const handleBox1 = () => {
+  //   setfilterState({ ...filterState, box1: !filterState.box1 })
+  // }
+
+  // const handleBox2 = () => {
+  //   setfilterState({ ...filterState, box2: !filterState.box2 })
+  // }
+
+
+  // useEffect(() => {
+  //   let newArr = [...originalData]
+  //   if (filterState.box1) {
+  //     newArr =originalData.filter(item => item.is_vegetarian)
+  //   }
+  //   if (filterState.box2) {
+  //     newArr = originalData.filter(item => item.is_spicy)
+  //   }
+  //   if (filterState.box1 && filterState.box2) {
+  //     newArr = originalData.filter(item => item.is_spicy && item.is_vegetarian)
+  //   }
+  //   if (!filterState.box1 && !filterState.box2) {
+  //     newArr =originalData
+  //   }
+  //   setdata(newArr)
+  // }, [filterState])
 
 
   const fetchFunc = async () => {
@@ -76,7 +96,11 @@ const PizzaContextFunc = ({ children }) => {
   }, [])
 
   return (
-    <pizzaContext.Provider value={{ data, handleToCart, inputVal, setinputVal, sortedData, handleBox1, handleBox2, handleSort1, handleSort2, cartData }}>{children}</pizzaContext.Provider>
+    <pizzaContext.Provider value={{
+      data, handleToCart, inputVal, setinputVal, sortedData, handleCheckboxInput,
+      // handleBox1, handleBox2,
+      handleSort1, handleSort2, cartData
+    }}>{children}</pizzaContext.Provider>
   )
 }
 
