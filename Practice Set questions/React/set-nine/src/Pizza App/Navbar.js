@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Navbar = () => {
-  const {}
+  const {us}
   return (
     <div>
         <Link to={"/"}>Home</Link>{" "}
