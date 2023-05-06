@@ -8,7 +8,7 @@ const Menu = () => {
     const { handleToCart, sortedData, cartData } = useContext(pizzaContext)
     return (
         <div>
-            <Navbar/>
+            <Navbar cartData={cartData}/>
             <Filters/>
             <div style={{ display: "flex", flexWrap: "wrap" }}>
                 {sortedData.map((item) => {
