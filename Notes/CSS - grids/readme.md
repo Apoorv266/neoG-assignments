@@ -107,7 +107,10 @@ body{
 
 ![alt text](fontsize.png "Title")
 
-> NOTE: The default styles will get overwritten if the same styles are specified in media query otherwise the default styles will be applied.
+> IMPORTANT NOTE:
+>  1. The default styles will get overwritten if the same styles are specified in media query otherwise the default styles will be applied.
+> 2. First always specify mobile or default styles and then speficity media query for tablet and then for desktop so that the styles can get overwridden when the specified screen width is reached.
+
 
 # GRIDS
 
