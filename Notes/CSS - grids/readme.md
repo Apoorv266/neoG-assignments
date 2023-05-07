@@ -21,6 +21,16 @@ desktop > mobile > tablet
 - Uses the @media rule to include a block of CSS properties only if a certain condition is true.
 
 ![alt text](syntax.png "Title")
+
+## What is breakpoint ? 
+
+A point where a screen changes its layout is called breakpoint.
+
+> Common breakpoints are -
+> - screen width >= 1024px- for desktops
+> -  1024px > screen width >= 768px - for tablets
+> - 768px > screen width >= 480px - for mobiles
+
 ## How does it work?
 
 - We will first do default stlying that will be applicable to mobile.
