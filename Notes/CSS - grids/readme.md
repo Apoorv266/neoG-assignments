@@ -24,7 +24,11 @@ desktop > mobile > tablet
 
 ## What is breakpoint ?
 
-A point where a screen changes its layout is called breakpoint.
+- A point where a screen changes its layout is called breakpoint.
+
+- CSS breakpoints are points where the website content responds according to the device width, allowing you to show the best possible layout to the user. 
+
+- CSS breakpoints are also called media query breakpoints, as they are used with media query.
 
 > Common breakpoints are -
 >
