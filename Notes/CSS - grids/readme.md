@@ -22,13 +22,14 @@ desktop > mobile > tablet
 
 ![alt text](syntax.png "Title")
 
-## What is breakpoint ? 
+## What is breakpoint ?
 
 A point where a screen changes its layout is called breakpoint.
 
 > Common breakpoints are -
+>
 > - screen width >= 1024px- for desktops
-> -  1024px > screen width >= 768px - for tablets
+> - 1024px > screen width >= 768px - for tablets
 > - 768px > screen width >= 480px - for mobiles
 
 ## How does it work?
@@ -68,7 +69,45 @@ body {
 
 - If the screen size is minimum 1024px(desktop) or more then then the font-size will get overridden to 18px.
 
+## Example 1
+
+- Make the background color of screen yellow.
+
+- write media query that will change the background color to transparent when the screen size is more than 600px.
+
+```css
+body{
+    background-color: yellow;
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    background-color: transparent;
+ }
+}
+```
+
+## Explanation -
+
+- By the rules of CSS, the styles of desktop will overwrite the default styles when the specified screen width is reached.
+
+- Here, the mobile view will have yellow background whereas desktop view will have a transparent background.
+
+- This is called mobile first design.
 <hr/>
+
+
+## Responsive typography 
+
+- It is important to change the font size when the screen size varies.
+
+- The font-sizes should be perfect on desktop so that the user can read the content.
+
+- We should use relative units like rem for font-sizes.
+
+![alt text](fontsize.png "Title")
+
+> NOTE: The default styles will get overwritten if the same styles are specified in media query otherwise the default styles will be applied.
 
 # GRIDS
 
