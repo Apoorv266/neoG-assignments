@@ -1,4 +1,70 @@
+# RESPONSIVE DESIGNS
+
+## What is responsive designs ?
+
+- Responsive design refers to a site or application design that responds to the environment in which it is viewed (mobile/desktop/tablet).
+
+- Responsive designing is designing based upon the screen size.
+
+## Resposive design flow
+
+Responsive design flow (for mobile first websites) -
+
+mobile(max-users)> desktop> tablet(min-users)
+
+Responsive design flow (for desktop first websites eg.Azure, AWS) -
+
+desktop > mobile > tablet
+
+## What is media query ?
+
+- Uses the @media rule to include a block of CSS properties only if a certain condition is true.
+
+![alt text](syntax.png "Title")
+## How does it work?
+
+- We will first do default stlying that will be applicable to mobile.
+
+- Then we define media queries for tablet that will be applied when a specific screen is applied.
+
+- Then we define media queries for desktop.
+
+```css
+/* default styles for mobile*/
+body {
+  font-size: 14px;
+}
+
+/* styles for tablets (potraits) and up */
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+/* styles for laptops and up */
+@media screen and (min-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
+}
+```
+
+### Explanation-
+
+- By default(when there is no screen size matching the media queries) the font-size of the body will be14px.
+
+- If the screen size is minimum 768px(tablet) or more then the font-size will get overridden to 16px.
+
+- If the screen size is minimum 1024px(desktop) or more then then the font-size will get overridden to 18px.
+
+<hr/>
+
+# GRIDS
+
 ## What is grid ?
+
+The CSS Grid Layout Module offers a grid-based layout system, with rows and columns, making it easier to design web pages without having to use floats and positioning.
 
 ### When to use grid and when to use flex?
 
@@ -94,7 +160,7 @@ Q- Create 3 rows with height 1fr each and create 3 columns with width 1fr each.
 
 - We have created a gap of 0.5 rem each between rows and columns.
 
-## The repeat() property
+## The repeat() notation
 
 - Repeat() is a notation that you can use with the grid-template-columns and grid-template-rows properties to make your rules more concise and easier to understand when creating a large amount of columns or rows.
 
@@ -153,13 +219,14 @@ Question - Place 3 cards in parent container, on desktop, 3 cards must be visibl
   }
 }
 ```
+
 ## Ouput for desktop -
+
 ![alt text](output2.png "Title")
 
 ## Ouput for mobile -
+
 ![alt text](output3.png "Title")
-
-
 
 ### Explanation -
 
