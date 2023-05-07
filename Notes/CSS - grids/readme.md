@@ -153,6 +153,13 @@ Question - Place 3 cards in parent container, on desktop, 3 cards must be visibl
   }
 }
 ```
+## Ouput for desktop -
+![alt text](output2.png "Title")
+
+## Ouput for mobile -
+![alt text](output3.png "Title")
+
+
 
 ### Explanation -
 
