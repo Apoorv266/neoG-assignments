@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { pizzaContext } from './PizzaContext'
 
 const Navbar = ({cartData}) => {
-  const {us}
+  const {us} = useContext(pizzaContext)
   return (
     <div>
         <Link to={"/"}>Home</Link>{" "}
