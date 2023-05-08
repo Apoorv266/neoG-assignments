@@ -6,7 +6,7 @@ export const pizzaContext = createContext()
 const PizzaContextFunc = ({ children }) => {
   const [data, setdata] = useState([])
   const [cartData, setcartData] = useState([])
-  const [originalData, setoriginalData] = useState([])
+  // const [originalData, setoriginalData] = useState([])
   const [inputVal, setinputVal] = useState("")
   const [sort, setsort] = useState("")
 
@@ -81,7 +81,7 @@ const PizzaContextFunc = ({ children }) => {
     const response = await fakeFetch("https://example.com/api/menu")
     if (response.status === 200) {
       setdata(response.data.menu)
-      setoriginalData(response.data.menu)
+      // setoriginalData(response.data.menu)
     }
   }
 

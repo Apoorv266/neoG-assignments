@@ -3,6 +3,8 @@ import './App.css';
 import BookContextFunc from './Books App/BookContext';
 import BookHome from './Books App/BookHome';
 import Home from './Pizza App/Home';
+import VideoContextFunc from './VideoListing/VideoContext';
+import VideoHome from './VideoListing/VideoHome';
 // import LandingPage from './Email App/LandingPage';
 
 function App() {
@@ -10,12 +12,17 @@ function App() {
     <div className="App">
     {/* <LandingPage/> */}
 
-    {/* Book app  */}
+    
     {/* <BookContextFunc>
     <BookHome/>
     </BookContextFunc> */}
 
-    <Home/>
+    {/* <Home/> */}
+
+    <VideoContextFunc>
+      <VideoHome/>
+    </VideoContextFunc>
+
     </div>
   );
 }
