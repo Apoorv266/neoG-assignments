@@ -8,6 +8,7 @@ const LikedVideos = () => {
   return (
     <div>
     <h2>Liked videos</h2>
+    {LikedVideosArray?.length === 0 && <h2>No liked videos</h2>}
    <RenderVideo data={LikedVideosArray}/>
   </div>
   )

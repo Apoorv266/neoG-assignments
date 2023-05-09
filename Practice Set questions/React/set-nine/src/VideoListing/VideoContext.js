@@ -4,11 +4,14 @@ import { fakeFetch } from './VideoData'
 export const pizzaContext = createContext()
 const VideoContextFunc = ({ children }) => {
     const [videoData, setvideoData] = useState([])
+    const [loader, setloader] = useState(false)
 
     const fetchData = async () => {
+        setloader(true)
         const response = await fakeFetch("https://example.com/api/videos")
         if (response.status === 200) {
             setvideoData(response.data.videos)
+            setloader(false)
         }
     }
 
@@ -27,7 +30,7 @@ const VideoContextFunc = ({ children }) => {
         setvideoData(newArray)
     }
     return (
-        <pizzaContext.Provider value={{videoData, handleLikeFunc, handleLaterFunc}}>{children}</pizzaContext.Provider>
+        <pizzaContext.Provider value={{videoData, handleLikeFunc, handleLaterFunc, loader}}>{children}</pizzaContext.Provider>
     )
 }
 
