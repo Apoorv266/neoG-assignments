@@ -21,8 +21,13 @@ const VideoContextFunc = ({ children }) => {
         setvideoData(newArray)
     }
 
+
+    const handleLaterFunc = (currId) =>{
+        let newArray = videoData.map((item) => item.id === currId ? item.hasOwnProperty("watchLater") ?{...item , watchLater : !item.watchLater} :  {...item , watchLater : true}: item)
+        setvideoData(newArray)
+    }
     return (
-        <pizzaContext.Provider value={{videoData, handleLikeFunc}}>{children}</pizzaContext.Provider>
+        <pizzaContext.Provider value={{videoData, handleLikeFunc, handleLaterFunc}}>{children}</pizzaContext.Provider>
     )
 }
 
