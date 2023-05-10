@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 const RenderVideo = ({data}) => {
     const {handleLikeFunc, handleLaterFunc } = useContext(pizzaContext);
   return (
-    <div style={{display:"flex", justifyContent:"center"}}>
+    <div style={{display:"flex", justifyContent:"center", flexWrap: "wrap"}}>
         {data.map((item) => {
           return (
-            <div style={{border:"2px solid black", marginRight:"40px", padding:"10px"}} id={item.id}>
+            <div style={{border:"2px solid black", margin:"20px 40px", padding:"10px"}} id={item.id}>
               <img src={item.thumbnail} alt="" srcset="" width={"300px"}/>
               <p>{item.title}</p>
               <Link to={`/video/${item.id}`}>
