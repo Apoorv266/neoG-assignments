@@ -4,20 +4,22 @@ import EmailContextFunc from './EmailContext'
 import Inbox from './Inbox'
 
 const Home = () => {
-  return (
-    <EmailContextFunc>
-    <div>
-        <Link to={"/"}>Home</Link>
-        <Link to={"/inbox"}>Inbox</Link>
+    return (
+        <EmailContextFunc>
+            <div>
+                <Link to={"/"}>Home</Link>{ " || "}
+                <Link to={"/inbox"}>Inbox</Link>
 
-        <Routes>
-            <Route path="/" element={<></>}/>
-            <Route path="/inbox" element={<Inbox/>}/>
-        </Routes>
-        {/* <Link to={"/inbox"}><button>To Inbox</button></Link> */}
-    </div>
-    </EmailContextFunc>
-  )
+
+                <h1>Email app</h1>
+                <Link to={"/inbox"}><button>To Inbox</button></Link>
+                <Routes>
+                    <Route path="/" element={<></>} />
+                    <Route path="/inbox" element={<Inbox />} />
+                </Routes>
+            </div>
+        </EmailContextFunc>
+    )
 }
 
 export default Home

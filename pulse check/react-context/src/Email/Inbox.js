@@ -4,7 +4,7 @@ import { emailContext } from './EmailContext'
 const Inbox = () => {
     const {emailData, handleReadFunc} = useContext(emailContext)
     const {read, unread} = emailData.reduce((acc, curr) =>{
-        curr.read? acc.read++: acc.unread++
+        curr.read ? acc.read++: acc.unread++
         return acc
     } , {read: 0,unread:0})
   return (
