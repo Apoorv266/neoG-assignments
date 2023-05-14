@@ -1,6 +1,1 @@
-what is frontend autheotication ?
-
-authentication on frontend.
-Helps in protection of private pages.
-
-<Navigate> returns the component at that particular route.
+https://hungry-plant-0d8.notion.site/Frontend-Authentication-6813e23193554fe2868aadf8d5edc8d5
