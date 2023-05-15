@@ -1,5 +1,5 @@
 .mainCard{
-    border: 0.1px solid gray;
+    border: 0.1px solid #DDDDDC;
     width: 80vw;
     display: flex;
     flex-direction: column;
