@@ -1,10 +1,10 @@
 import './App.css';
-import Home from './Home';
+import Home from './Components/Home';
 
 function App() {
   return (
     <div className="App">
-      <h1>Gay Mail</h1>
+      <h1>G-Mail</h1>
       <Home />
     </div>
   );

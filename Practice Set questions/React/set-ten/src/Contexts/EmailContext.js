@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react'
-import { mails } from './Data'
+import { mails } from '../Data/Data'
 
 
 export const emailContext = createContext()
