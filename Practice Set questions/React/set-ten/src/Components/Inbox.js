@@ -15,11 +15,11 @@ const Inbox = () => {
             </div>
             <p>{item.content}</p>
             <div className="cardBtn">
-              <button>View Details</button>
+              <button className="btn0">View Details</button>
               <div className="utils-btn">
-                <button>Delete</button>
-                <button>Mark as read</button>
-                <button>Report as spam</button>
+                <button className="btn1">Delete</button>
+                <button className="btn2">Mark as read</button>
+                <button className="btn3">Report as spam</button>
               </div>
             </div>
           </div>
