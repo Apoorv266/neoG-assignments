@@ -8,7 +8,7 @@ const Main = () => {
     <>
     <h1>G-Mail</h1>
     <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="*" element={<Home />} />
         <Route path="/mail/id/:mailId" element={<MailDetail />} />
     </Routes>
     </>
