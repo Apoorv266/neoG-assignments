@@ -7,12 +7,12 @@ import EmailContextFunc from './Contexts/EmailContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <BrowserRouter>
     <EmailContextFunc>
       <App />
     </EmailContextFunc>
     </BrowserRouter>
-  </React.StrictMode>
+  // </React.StrictMode>
 );
 

@@ -1,8 +1,9 @@
-import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import React, { useContext } from 'react'
+import {  NavLink } from 'react-router-dom'
+import { emailContext } from '../Contexts/EmailContext';
 
 const Navbar = () => {
-
+    const { countValue } = useContext(emailContext);
     const activeStyle = ({ isActive }) => {
         return {
             borderRight: isActive ? "5px solid red" : "none"
@@ -10,9 +11,9 @@ const Navbar = () => {
     }
     return (
         <div className='nav-main'>
-            <NavLink to={"/inbox"} className='nav-link' style={activeStyle}>Inbox</NavLink>
-            <NavLink to={"/spam"} className='nav-link' style={activeStyle}>Spam</NavLink>
-            <NavLink to={"/trash"} className='nav-link' style={activeStyle}>Trash</NavLink>
+            <NavLink to={"/"} className='nav-link' style={activeStyle}>Inbox</NavLink>
+            <NavLink to={"/spam"} className='nav-link' style={activeStyle}>Spam ({countValue.spamVal})</NavLink>
+            <NavLink to={"/trash"} className='nav-link' style={activeStyle}>Trash ({countValue.dltVal})</NavLink>
         </div>
     )
 }
