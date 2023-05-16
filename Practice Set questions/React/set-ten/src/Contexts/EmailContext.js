@@ -42,17 +42,14 @@ const EmailContextFunc = ({ children }) => {
     if (curr.isDlt) {
       return { ...acc, dltVal: acc.dltVal + 1 }
     }
-    if (curr.unread) {
-      return { ...acc, unReadVal: acc.unReadVal + 1 }
-    }
     return acc
-  }, { spamVal: 0, dltVal: 0, unReadVal : 0 })
+  }, { spamVal: 0, dltVal: 0})
 
   
   
 
   return (
-    <emailContext.Provider value={{ filteredData, dispatch, countValue, setCheckBox , checkBox}}>{children}</emailContext.Provider>
+    <emailContext.Provider value={{emailData,  filteredData, dispatch, countValue, setCheckBox , checkBox}}>{children}</emailContext.Provider>
   )
 }
 

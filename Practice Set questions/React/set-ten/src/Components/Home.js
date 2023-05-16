@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import Navbar from './Navbar'
-import { Route, Routes } from 'react-router-dom'
+import { Link, Route, Routes } from 'react-router-dom'
 import Spam from './Spam'
 import Inbox from './Inbox'
 import Trash from './Trash'

@@ -1,46 +1,69 @@
-.mainCard{
-    border: 0.1px solid #DDDDDC;
-    width: 80vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: left;
-    padding: 15px;
-    gap: -20px;
+.mainCard {
+  border: 0.1px solid #dddddc;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  padding: 15px;
+  gap: -20px;
 }
 
-.header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center; 
-    width: 80vw;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80vw;
 }
 
-.cardBtn{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 80vw; 
+.cardBtn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80vw;
 }
 
-.cardBtn button{
-    margin-right: 10px;
-    font-weight: 700;
-    background-color: beige;
-    border: none;
-    border-radius: 10px;
-    padding: 10px;
+.cardBtn button {
+  margin-right: 10px;
+  font-weight: 700;
+  background-color: beige;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .btn1 {
-    color: red;
+  color: red;
 }
 
 .btn2 {
-    color: orange;
+  color: orange;
 }
 
 .btn3 {
-    color: green;
+  color: green;
 }
+
+@media (max-width: 425px) {
+  .cardBtn {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn0 {
+    margin: 10px 10px;
+  }
+}
+
+@media (max-width: 375px) {
+    .utils-btn {
+        display: flex;
+      flex-direction: row;
+    }
+  
+    .btn0 {
+      margin: 10px 10px;
+    }
+  }

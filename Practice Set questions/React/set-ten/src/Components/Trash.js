@@ -4,7 +4,7 @@ import { emailContext } from '../Contexts/EmailContext';
 
 const Trash = () => {
 
-  const { filteredData ,countValue} = useContext(emailContext);
+  const { filteredData } = useContext(emailContext);
   let dltArray = filteredData.filter(item => item.isDlt)
   let unreadMsg = dltArray.filter(item => item.unread)
   return (

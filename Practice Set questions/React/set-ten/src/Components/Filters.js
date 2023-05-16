@@ -4,7 +4,7 @@ import { emailContext } from "../Contexts/EmailContext";
 const Filters = () => {
   const { checkBox, setCheckBox } = useContext(emailContext);
   return (
-    <div style={{ border: "0.1px solid #DDDDDC", padding: "10px" }}>
+    <div style={{ border: "0.1px solid #DDDDDC", padding: "10px" }} className="filter-main">
       <label>
         <input
           type="checkbox"

@@ -1,0 +1,27 @@
+.detail-main {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  border: 0.5px solid #DDDDDC;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.inboxBtn{
+    margin-right: 10px;
+    font-weight: 700;
+    background-color: beige;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    color: green;
+}

@@ -9,9 +9,9 @@ const Inbox = () => {
   let unreadMsg = inboxArray.filter(item => item.unread)
   return (
     <>
-     <h2>Unread: {unreadMsg.length}</h2>
-    {inboxArray.length === 0 && <h1 style={{width: "80vw"}}>No emails to display</h1>}
-     <RenderMails data={inboxArray}/>
+      <h2>Unread: {unreadMsg.length}</h2>
+      {inboxArray.length === 0 && <h1 style={{ width: "80vw" }}>No emails to display</h1>}
+      <RenderMails data={inboxArray} />
     </>
   );
 };

@@ -18,3 +18,50 @@
   color: black;
   font-weight: 600;
 }
+
+.filter-main {
+  border: 0.1px solid #DDDDDC;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .home-main {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-main {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 20px;
+  }
+
+  .filter-main {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+
+@media (max-width: 425px) {
+  .filter-main {
+   flex-direction: column;
+  }
+
+
+  .nav-main {
+    gap: 0px;
+    width: 70vw;
+  }
+
+ 
+}
+
+@media (max-width: 375px) {
+ .nav-link {
+    font-size: 15px;
+  }
+
+}
