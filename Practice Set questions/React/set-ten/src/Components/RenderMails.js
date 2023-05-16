@@ -11,7 +11,7 @@ const RenderMails = ({ data }) => {
           <div className="mainCard" key={item.mId} style={{ backgroundColor: item.unread ? "#F1F6FC" : "white" }}>
             <div id={item.id} className="header">
               <h3>Subject : {item.subject}</h3>
-              <p onClick={() => dispatch({ type: "STAR", payload: item.mId })}>{!item.isStarred ? "Star" : "Unstar"}</p>
+              <p onClick={() => dispatch({ type: "STAR", payload: item.mId })}>{!item.isStarred ? <img src={require('../img/star.png')} alt="" srcset="" width={"20px"}/> : <img src={require('../img/unstar.png')} alt="" srcset="" width={"20px"}/>}</p>
             </div>
             <p>{item.content}</p>
 
