@@ -45,8 +45,6 @@ const EmailContextFunc = ({ children }) => {
     return acc
   }, { spamVal: 0, dltVal: 0})
 
-  
-  
 
   return (
     <emailContext.Provider value={{emailData,  filteredData, dispatch, countValue, setCheckBox , checkBox}}>{children}</emailContext.Provider>
